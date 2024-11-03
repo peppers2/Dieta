@@ -6,10 +6,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
-# Configuração da página: título e favicon (logo)
+# Configuração da página
 st.set_page_config(page_title="TCC Univesp - Sistema de Recomendação", page_icon="logo.png", layout="wide")
 
-# Funções para cálculo de IMC e TMB (Harris-Benedict)
+# Funções para cálculo de IMC e TMB
 def calcular_imc(peso, altura):
     return peso / ((altura / 100) ** 2) if altura > 0 else 0
 
@@ -22,21 +22,23 @@ def calcular_tmb(peso, altura, idade, genero, atividade_fisica):
     fator_atividade = {"Sedentário": 1.2, "Leve": 1.375, "Moderado": 1.55, "Intenso": 1.725}
     return tmb * fator_atividade.get(atividade_fisica, 1)
 
-# Carregar dados de alimentos
+# Carregar dados de alimentos e pacientes
 df_alimentos = pd.read_csv("base_alimentos_2000.csv")
+df_pacientes = pd.read_csv("pacientes_base_treinamento_1000_formatado_brasil.csv", delimiter=";")
 
-# Criar coluna Target de forma simulada se não existir
-if 'Target' not in df_alimentos.columns:
-    df_alimentos['Target'] = np.random.choice([0, 1], size=len(df_alimentos))
+# Ajustar dados de pacientes (caso necessário)
+df_pacientes["Peso (kg)"] = df_pacientes["Peso (kg)"].str.replace(",", ".").astype(float)
+df_pacientes["Altura (cm)"] = df_pacientes["Altura (cm)"].str.replace(",", ".").astype(float)
+df_pacientes["IMC"] = df_pacientes["IMC"].str.replace(",", ".").astype(float)
 
-# Doenças consideradas na anamnese
+# Doenças para anamnese
 doencas_opcoes = [
     "Diabetes Tipo 1", "Diabetes Tipo 2", "Hipertensão", "Obesidade", 
     "Insuficiência Renal", "Colesterol Alto", "Doenças Cardíacas", 
     "Osteoporose", "Doença Celíaca"
 ]
 
-# Função para sugerir refeições dentro da TMB e restrições alimentares
+# Função para sugerir refeições sem ultrapassar a TMB e respeitando restrições
 def sugerir_refeicoes(tmb, doencas):
     df_permitidos = df_alimentos[~df_alimentos["Doencas_Restritivas"].isin(doencas)]
     refeicoes = {}
@@ -48,14 +50,40 @@ def sugerir_refeicoes(tmb, doencas):
     
     return refeicoes
 
-# Configuração do Streamlit e menu de navegação
+# Função para treinar o modelo e prever doenças
+def treinar_modelo(df):
+    X = df.drop(columns=[col for col in df.columns if "Doença" in col])
+    y = df[[col for col in df.columns if "Doença" in col]]
+    
+    modelos = {}
+    metricas = {}
+    previsoes = {}
+
+    for disease in y.columns:
+        X_train, X_test, y_train, y_test = train_test_split(X, y[disease], test_size=0.3, random_state=42)
+        model = RandomForestClassifier(random_state=42)
+        model.fit(X_train, y_train)
+        y_pred = model.predict(X_test)
+
+        # Salvando o modelo e as métricas
+        modelos[disease] = model
+        metricas[disease] = {
+            "Acurácia": accuracy_score(y_test, y_pred),
+            "F1 Score": f1_score(y_test, y_pred),
+            "Precisão": precision_score(y_test, y_pred),
+            "Recall": recall_score(y_test, y_pred)
+        }
+        
+        # Previsão (exemplo para um novo paciente)
+        previsoes[disease] = model.predict(X_test[:1])  # Exemplo com um paciente de teste
+    
+    return modelos, metricas, previsoes
+
+# Configuração de navegação no Streamlit
 st.title("Sistema de Recomendação Alimentar para Idosos")
 st.sidebar.title("Navegação")
 
-# Adicionando logotipo na barra lateral
-st.sidebar.image("logo.png", use_column_width=True)
-
-menu = st.sidebar.radio("Menu", ["Coleta de Dados", "Anamnese", "Recomendações", "Análise Gráfica", "Modelo de Machine Learning"])
+menu = st.sidebar.radio("Menu", ["Coleta de Dados","Resumo de Pacientes","Resumo de Alimentos", "Anamnese", "Recomendações", "Análise Gráfica", "Modelo de Machine Learning"])
 
 # Inicializando variáveis no session_state para garantir que os dados persistam
 if 'dados_paciente' not in st.session_state:
@@ -93,11 +121,13 @@ if menu == "Coleta de Dados":
         else:
             st.write("Preencha o gênero e o nível de atividade física para calcular a TMB.")
 
-# Página 2: Anamnese Detalhada
+
+            # Página 2: Anamnese Detalhada
 elif menu == "Anamnese":
     st.header("Ficha de Anamnese Detalhada")
     st.write("Selecione as doenças pré-existentes do paciente:")
 
+    # Coleta das doenças pré-existentes
     st.session_state['dados_paciente']['doencas'] = {doenca: st.checkbox(doenca, value=doenca in st.session_state['dados_paciente']['doencas']) for doenca in doencas_opcoes}
     
     # Converter para uma lista de doenças selecionadas
@@ -111,12 +141,15 @@ elif menu == "Anamnese":
 elif menu == "Recomendações":
     st.header("Recomendações de Refeições")
     
+    # Geração das recomendações de refeições com base na TMB e nas doenças selecionadas
     if st.session_state['dados_paciente']['tmb'] > 0 and st.session_state['dados_paciente']['doencas']:
         recomendacoes = sugerir_refeicoes(st.session_state['dados_paciente']['tmb'], st.session_state['dados_paciente']['doencas'])
         total_calorias_consumido = 0  
         
         st.write("Com base nas informações fornecidas, aqui estão as recomendações de refeições:")
         calorias_refeicoes = {}
+        
+        # Exibição das refeições e calorias totais para cada uma
         for refeicao, alimentos in recomendacoes.items():
             st.subheader(refeicao)
             calorias_refeicao = alimentos["Calorias"].sum()
@@ -184,12 +217,11 @@ elif menu == "Análise Gráfica":
         fig_doencas.update_layout(title="Distribuição das Doenças Selecionadas")
         st.plotly_chart(fig_doencas)
 
-
 # Página 5: Modelo de Machine Learning e Resultados
 elif menu == "Modelo de Machine Learning":
     st.header("Modelo de Machine Learning Usado e Resultados")
 
-    # Verificar se as informações nas páginas 1 e 2 foram preenchidas
+    # Verificar se todas as informações necessárias estão preenchidas
     if (st.session_state['dados_paciente']['peso'] > 0 and 
         st.session_state['dados_paciente']['altura'] > 0 and 
         st.session_state['dados_paciente']['idade'] > 0 and 
@@ -197,8 +229,13 @@ elif menu == "Modelo de Machine Learning":
         st.session_state['dados_paciente']['atividade_fisica'] and 
         st.session_state['dados_paciente']['doencas']):
 
+        # Verificar se a coluna Target existe, caso contrário, criá-la com valores simulados
+        if 'Target' not in df_alimentos.columns:
+            df_alimentos['Target'] = np.random.choice([0, 1], size=len(df_alimentos))
+
         # Preparação dos dados para treinamento, convertendo variáveis categóricas para numéricas
-        df_alimentos_encoded = pd.get_dummies(df_alimentos.drop(columns=["Target"]))
+        # Verificar se a coluna 'Target' existe antes de removê-la
+        df_alimentos_encoded = pd.get_dummies(df_alimentos.drop(columns=["Target"], errors="ignore"))
         X = df_alimentos_encoded
         y = df_alimentos["Target"]
 
@@ -236,3 +273,179 @@ elif menu == "Modelo de Machine Learning":
 
     else:
         st.write("**Dados incompletos.** Por favor, revise as informações nas seções de Coleta de Dados e Anamnese para calcular o modelo de machine learning.")
+
+
+elif menu == "Resumo de Pacientes":
+    st.header("Resumo dos Pacientes")
+    
+        # Gráfico de distribuição de idade com gradiente e rótulos
+    fig_idade = go.Figure(data=[
+        go.Histogram(
+            x=df_pacientes['Idade'],
+            nbinsx=20,
+            marker=dict(
+                color='rgba(0, 128, 255, 0.7)',  # Cor inicial
+                line=dict(width=1, color='rgba(0, 128, 255, 1)')
+            ),
+            opacity=0.75
+        )
+    ])
+    fig_idade.update_layout(
+        title="Distribuição de Idade dos Pacientes",
+        xaxis_title="Idade",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_idade)
+
+    # Gráfico de distribuição de IMC com gradiente e rótulos
+    fig_imc = go.Figure(data=[
+        go.Histogram(
+            x=df_pacientes['IMC'],
+            nbinsx=20,
+            marker=dict(
+                color='rgba(255, 0, 127, 0.7)',  # Cor inicial
+                line=dict(width=1, color='rgba(255, 0, 127, 1)')
+            ),
+            opacity=0.75
+        )
+    ])
+    fig_imc.update_layout(
+        title="Distribuição de IMC dos Pacientes",
+        xaxis_title="IMC",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_imc)
+
+    # Gráfico de distribuição de Peso com gradiente e rótulos
+    fig_peso = go.Figure(data=[
+        go.Histogram(
+            x=df_pacientes['Peso (kg)'],
+            nbinsx=20,
+            marker=dict(
+                color='rgba(0, 255, 127, 0.7)',  # Cor inicial
+                line=dict(width=1, color='rgba(0, 255, 127, 1)')
+            ),
+            opacity=0.75
+        )
+    ])
+    fig_peso.update_layout(
+        title="Distribuição de Peso dos Pacientes",
+        xaxis_title="Peso (kg)",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_peso)
+
+    # Gráfico de doenças mais comuns com gradiente e rótulos
+    doencas_columns = [col for col in df_pacientes.columns if "Doença" in col]
+    doencas_counts = df_pacientes[doencas_columns].sum()
+
+    fig_doencas = go.Figure(data=[
+        go.Bar(
+            x=doencas_counts.index,
+            y=doencas_counts.values,
+            text=doencas_counts.values,
+            textposition='auto',
+            marker=dict(
+                color='rgba(255, 165, 0, 0.7)',  # Cor inicial
+                line=dict(width=1.5, color='rgba(255, 165, 0, 1)')
+            )
+        )
+    ])
+    fig_doencas.update_layout(
+        title="Frequência de Doenças nos Pacientes",
+        xaxis_title="Doenças",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_doencas)
+
+elif menu == "Resumo de Alimentos":
+    st.header("Resumo dos Alimentos")
+
+    
+    # Gráfico de distribuição de Calorias
+    fig_calorias = go.Figure(data=[
+        go.Histogram(
+            x=df_alimentos['Calorias'],
+            nbinsx=20,
+            marker=dict(
+                color='rgba(255, 99, 71, 0.7)',  # Cor inicial
+                line=dict(width=1, color='rgba(255, 99, 71, 1)')
+            ),
+            opacity=0.75
+        )
+    ])
+    fig_calorias.update_layout(
+        title="Distribuição de Calorias",
+        xaxis_title="Calorias",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_calorias)
+
+   
+    # Gráfico de distribuição de Gorduras
+    fig_carboidratos = go.Figure(data=[
+        go.Histogram(
+            x=df_alimentos['Calorias'],
+            nbinsx=20,
+            marker=dict(
+                color='rgba(75, 192, 192, 0.7)',  # Cor inicial
+                line=dict(width=1, color='rgba(75, 192, 192, 1)')
+            ),
+            opacity=0.75
+        )
+    ])
+    fig_carboidratos.update_layout(
+        title="Distribuição de Calorias",
+        xaxis_title="Calorias (g)",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_carboidratos)
+
+    # Gráfico de distribuição de Gorduras
+    fig_gorduras = go.Figure(data=[
+        go.Histogram(
+            x=df_alimentos['Doencas_Restritivas'],
+            nbinsx=20,
+            marker=dict(
+                color='rgba(153, 102, 255, 0.7)',  # Cor inicial
+                line=dict(width=1, color='rgba(153, 102, 255, 1)')
+            ),
+            opacity=0.75
+        )
+    ])
+    fig_gorduras.update_layout(
+        title="Doenças Restritivas",
+        xaxis_title="Doenças Restritivas",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_gorduras)
+
+    # Gráfico de categorias de alimentos mais comuns
+    categorias_counts = df_alimentos['Refeicao_Indicada'].value_counts()
+
+    fig_categorias = go.Figure(data=[
+        go.Bar(
+            x=categorias_counts.index,
+            y=categorias_counts.values,
+            text=categorias_counts.values,
+            textposition='auto',
+            marker=dict(
+                color='rgba(255, 206, 86, 0.7)',  # Cor inicial
+                line=dict(width=1.5, color='rgba(255, 206, 86, 1)')
+            )
+        )
+    ])
+    fig_categorias.update_layout(
+        title="Base de Alimentos por Refeição",
+        xaxis_title="Categorias",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_categorias)
