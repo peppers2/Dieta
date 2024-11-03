@@ -1,0 +1,2001 @@
+Alimento,Doencas_Restritivas,Calorias,Refeicao_Indicada
+Maçã,Colesterol Alto,203,Café da Manhã
+Aveia,Diabetes Tipo 1,290,Jantar
+Aveia,Osteoporose,302,Almoço
+Brócolis,Osteoporose,363,Jantar
+Tomate,Osteoporose,123,Almoço
+Queijo Cottage,Diabetes Tipo 2,368,Lanche da Tarde
+Couve,Insuficiência Renal,146,Almoço
+Morango,Obesidade,455,Café da Manhã
+Salmão,Obesidade,253,Lanche da Tarde
+Blueberry,Diabetes Tipo 1,213,Café da Manhã
+Blueberry,Osteoporose,234,Café da Manhã
+Amêndoas,Diabetes Tipo 1,427,Café da Manhã
+Banana,Diabetes Tipo 2,478,Jantar
+Abobrinha,Doenças Cardíacas,244,Café da Manhã
+Morango,Hipertensão,146,Café da Manhã
+Blueberry,Doença Celíaca,142,Café da Manhã
+Cenoura,Doenças Cardíacas,150,Jantar
+Pimentão,Osteoporose,298,Jantar
+Aveia,Hipertensão,124,Café da Manhã
+Castanha de Caju,Osteoporose,405,Café da Manhã
+Arroz Integral,Doença Celíaca,335,Lanche da Tarde
+Brócolis,Colesterol Alto,239,Café da Manhã
+Abacate,Diabetes Tipo 1,91,Almoço
+Ovos,Obesidade,471,Jantar
+Peito de Frango,Colesterol Alto,241,Lanche da Tarde
+Lentilhas,Nenhuma,207,Almoço
+Maçã,Hipertensão,403,Café da Manhã
+Pepino,Diabetes Tipo 1,303,Lanche da Tarde
+Acelga,Colesterol Alto,85,Lanche da Tarde
+Blueberry,Colesterol Alto,284,Jantar
+Tilápia,Insuficiência Renal,258,Almoço
+Tomate,Nenhuma,134,Lanche da Tarde
+Tomate,Diabetes Tipo 1,83,Jantar
+Quinoa,Nenhuma,181,Almoço
+Feijão Preto,Diabetes Tipo 1,401,Jantar
+Banana,Colesterol Alto,287,Jantar
+Brócolis,Nenhuma,150,Lanche da Tarde
+Feijão Preto,Insuficiência Renal,394,Jantar
+Batata Inglesa,Diabetes Tipo 2,240,Lanche da Tarde
+Espinafre,Nenhuma,75,Café da Manhã
+Morango,Insuficiência Renal,395,Café da Manhã
+Acelga,Doença Celíaca,343,Café da Manhã
+Iogurte Natural,Doenças Cardíacas,252,Café da Manhã
+Carne Magra,Insuficiência Renal,274,Almoço
+Grão-de-Bico,Nenhuma,245,Lanche da Tarde
+Maçã,Doenças Cardíacas,177,Lanche da Tarde
+Maçã,Osteoporose,241,Café da Manhã
+Couve,Diabetes Tipo 1,263,Jantar
+Peito de Frango,Doenças Cardíacas,127,Lanche da Tarde
+Abobrinha,Nenhuma,146,Café da Manhã
+Cenoura,Hipertensão,156,Jantar
+Lentilhas,Hipertensão,55,Café da Manhã
+Pão Integral,Doença Celíaca,327,Lanche da Tarde
+Batata Inglesa,Nenhuma,218,Café da Manhã
+Banana,Obesidade,191,Jantar
+Banana,Doenças Cardíacas,77,Almoço
+Acelga,Nenhuma,84,Café da Manhã
+Abobrinha,Diabetes Tipo 1,434,Café da Manhã
+Iogurte Natural,Insuficiência Renal,105,Almoço
+Pepino,Osteoporose,299,Jantar
+Semente de Linhaça,Doenças Cardíacas,94,Café da Manhã
+Maçã,Diabetes Tipo 2,281,Café da Manhã
+Quinoa,Doença Celíaca,226,Jantar
+Acelga,Doenças Cardíacas,417,Café da Manhã
+Amêndoas,Nenhuma,357,Jantar
+Abacate,Doenças Cardíacas,365,Almoço
+Iogurte Natural,Doença Celíaca,67,Jantar
+Pão Integral,Nenhuma,402,Café da Manhã
+Salmão,Osteoporose,274,Jantar
+Pão Integral,Insuficiência Renal,317,Café da Manhã
+Aveia,Colesterol Alto,476,Lanche da Tarde
+Amêndoas,Colesterol Alto,248,Almoço
+Couve,Diabetes Tipo 1,260,Almoço
+Quinoa,Obesidade,339,Jantar
+Lentilhas,Insuficiência Renal,101,Almoço
+Abacate,Diabetes Tipo 2,486,Café da Manhã
+Acelga,Diabetes Tipo 1,375,Almoço
+Morango,Diabetes Tipo 1,131,Almoço
+Lentilhas,Obesidade,488,Café da Manhã
+Castanha de Caju,Hipertensão,316,Lanche da Tarde
+Queijo Cottage,Colesterol Alto,254,Jantar
+Peito de Frango,Nenhuma,91,Almoço
+Acelga,Diabetes Tipo 1,465,Almoço
+Maçã,Insuficiência Renal,309,Almoço
+Batata Inglesa,Doenças Cardíacas,282,Almoço
+Peito de Frango,Diabetes Tipo 1,276,Café da Manhã
+Tofu,Doenças Cardíacas,476,Almoço
+Maçã,Obesidade,400,Café da Manhã
+Couve,Osteoporose,184,Jantar
+Grão-de-Bico,Hipertensão,370,Café da Manhã
+Tilápia,Diabetes Tipo 2,54,Jantar
+Aveia,Diabetes Tipo 2,182,Lanche da Tarde
+Grão-de-Bico,Insuficiência Renal,113,Almoço
+Castanha de Caju,Colesterol Alto,286,Almoço
+Queijo Cottage,Hipertensão,498,Almoço
+Brócolis,Colesterol Alto,392,Lanche da Tarde
+Maçã,Osteoporose,463,Almoço
+Espinafre,Hipertensão,328,Jantar
+Morango,Diabetes Tipo 1,137,Café da Manhã
+Laranja,Doença Celíaca,355,Almoço
+Grão-de-Bico,Doença Celíaca,332,Lanche da Tarde
+Acelga,Obesidade,168,Almoço
+Tofu,Nenhuma,362,Lanche da Tarde
+Aveia,Doença Celíaca,189,Almoço
+Pepino,Obesidade,436,Lanche da Tarde
+Acelga,Colesterol Alto,62,Almoço
+Abacate,Insuficiência Renal,52,Almoço
+Cenoura,Diabetes Tipo 2,141,Jantar
+Semente de Linhaça,Insuficiência Renal,254,Lanche da Tarde
+Quinoa,Doença Celíaca,167,Jantar
+Banana,Colesterol Alto,171,Almoço
+Couve,Doenças Cardíacas,171,Lanche da Tarde
+Espinafre,Obesidade,283,Jantar
+Peras,Diabetes Tipo 2,85,Almoço
+Iogurte Natural,Colesterol Alto,178,Jantar
+Laranja,Colesterol Alto,367,Café da Manhã
+Ovos,Nenhuma,127,Lanche da Tarde
+Feijão Preto,Diabetes Tipo 1,151,Lanche da Tarde
+Maçã,Doença Celíaca,452,Almoço
+Abobrinha,Nenhuma,469,Jantar
+Tomate,Hipertensão,60,Jantar
+Castanha de Caju,Diabetes Tipo 1,325,Jantar
+Tofu,Doença Celíaca,286,Café da Manhã
+Blueberry,Diabetes Tipo 2,205,Lanche da Tarde
+Laranja,Obesidade,315,Café da Manhã
+Aveia,Insuficiência Renal,162,Jantar
+Tofu,Obesidade,472,Lanche da Tarde
+Grão-de-Bico,Insuficiência Renal,428,Almoço
+Castanha de Caju,Obesidade,318,Café da Manhã
+Arroz Integral,Colesterol Alto,289,Jantar
+Tomate,Diabetes Tipo 1,280,Café da Manhã
+Batata Inglesa,Colesterol Alto,152,Jantar
+Arroz Integral,Diabetes Tipo 2,119,Jantar
+Chia,Nenhuma,392,Jantar
+Laranja,Doenças Cardíacas,112,Lanche da Tarde
+Aveia,Diabetes Tipo 1,62,Café da Manhã
+Quinoa,Diabetes Tipo 1,116,Jantar
+Feijão Preto,Hipertensão,109,Jantar
+Pão Integral,Osteoporose,434,Almoço
+Aveia,Diabetes Tipo 1,74,Café da Manhã
+Iogurte Natural,Doenças Cardíacas,412,Café da Manhã
+Peras,Colesterol Alto,271,Almoço
+Castanha de Caju,Insuficiência Renal,182,Jantar
+Iogurte Natural,Diabetes Tipo 2,452,Café da Manhã
+Ovos,Diabetes Tipo 1,351,Café da Manhã
+Blueberry,Colesterol Alto,249,Almoço
+Tilápia,Colesterol Alto,122,Almoço
+Queijo Cottage,Diabetes Tipo 1,450,Café da Manhã
+Aveia,Doenças Cardíacas,136,Almoço
+Ovos,Obesidade,412,Café da Manhã
+Tomate,Insuficiência Renal,129,Jantar
+Ervilhas,Insuficiência Renal,433,Jantar
+Feijão Preto,Doenças Cardíacas,326,Lanche da Tarde
+Couve,Colesterol Alto,98,Lanche da Tarde
+Salmão,Obesidade,137,Jantar
+Queijo Cottage,Diabetes Tipo 2,372,Café da Manhã
+Batata Inglesa,Diabetes Tipo 1,98,Café da Manhã
+Castanha de Caju,Hipertensão,268,Café da Manhã
+Batata Doce,Doenças Cardíacas,189,Almoço
+Blueberry,Hipertensão,202,Café da Manhã
+Lentilhas,Doenças Cardíacas,449,Jantar
+Pepino,Nenhuma,417,Almoço
+Lentilhas,Hipertensão,203,Jantar
+Iogurte Natural,Osteoporose,433,Almoço
+Abobrinha,Doenças Cardíacas,439,Café da Manhã
+Tilápia,Obesidade,72,Lanche da Tarde
+Banana,Osteoporose,360,Jantar
+Batata Inglesa,Hipertensão,357,Café da Manhã
+Blueberry,Hipertensão,212,Lanche da Tarde
+Blueberry,Insuficiência Renal,207,Almoço
+Aveia,Insuficiência Renal,190,Lanche da Tarde
+Pepino,Colesterol Alto,350,Café da Manhã
+Aveia,Obesidade,364,Lanche da Tarde
+Amêndoas,Doença Celíaca,430,Lanche da Tarde
+Abobrinha,Doenças Cardíacas,326,Café da Manhã
+Acelga,Nenhuma,369,Lanche da Tarde
+Peras,Obesidade,480,Café da Manhã
+Peito de Frango,Nenhuma,403,Jantar
+Morango,Osteoporose,125,Café da Manhã
+Feijão Preto,Osteoporose,352,Lanche da Tarde
+Iogurte Natural,Colesterol Alto,400,Lanche da Tarde
+Abacate,Doença Celíaca,160,Lanche da Tarde
+Espinafre,Diabetes Tipo 1,298,Lanche da Tarde
+Pimentão,Osteoporose,317,Lanche da Tarde
+Carne Magra,Doenças Cardíacas,401,Jantar
+Laranja,Doença Celíaca,340,Café da Manhã
+Semente de Linhaça,Doença Celíaca,347,Jantar
+Tomate,Insuficiência Renal,199,Lanche da Tarde
+Aveia,Nenhuma,252,Café da Manhã
+Morango,Doença Celíaca,141,Jantar
+Abacate,Doença Celíaca,131,Lanche da Tarde
+Tilápia,Diabetes Tipo 1,363,Lanche da Tarde
+Aveia,Nenhuma,440,Lanche da Tarde
+Acelga,Hipertensão,445,Lanche da Tarde
+Brócolis,Doenças Cardíacas,239,Almoço
+Brócolis,Insuficiência Renal,418,Almoço
+Morango,Doenças Cardíacas,416,Lanche da Tarde
+Aveia,Colesterol Alto,197,Almoço
+Chia,Osteoporose,299,Almoço
+Aveia,Colesterol Alto,57,Café da Manhã
+Batata Inglesa,Colesterol Alto,363,Almoço
+Brócolis,Colesterol Alto,194,Café da Manhã
+Espinafre,Hipertensão,376,Lanche da Tarde
+Semente de Linhaça,Doenças Cardíacas,218,Jantar
+Batata Doce,Nenhuma,240,Lanche da Tarde
+Queijo Cottage,Nenhuma,244,Lanche da Tarde
+Ervilhas,Hipertensão,60,Almoço
+Grão-de-Bico,Nenhuma,347,Lanche da Tarde
+Grão-de-Bico,Doença Celíaca,476,Café da Manhã
+Blueberry,Nenhuma,474,Almoço
+Ervilhas,Nenhuma,463,Almoço
+Peito de Frango,Insuficiência Renal,124,Café da Manhã
+Couve,Doenças Cardíacas,380,Almoço
+Maçã,Hipertensão,209,Jantar
+Iogurte Natural,Hipertensão,131,Almoço
+Grão-de-Bico,Insuficiência Renal,405,Café da Manhã
+Peito de Frango,Hipertensão,470,Lanche da Tarde
+Ovos,Doença Celíaca,111,Jantar
+Arroz Integral,Diabetes Tipo 1,387,Almoço
+Banana,Hipertensão,419,Café da Manhã
+Cenoura,Diabetes Tipo 2,461,Almoço
+Acelga,Diabetes Tipo 1,331,Café da Manhã
+Semente de Linhaça,Colesterol Alto,481,Almoço
+Couve,Doença Celíaca,232,Lanche da Tarde
+Aveia,Insuficiência Renal,300,Jantar
+Aveia,Hipertensão,417,Café da Manhã
+Acelga,Doença Celíaca,445,Lanche da Tarde
+Tofu,Nenhuma,226,Café da Manhã
+Tilápia,Colesterol Alto,142,Almoço
+Ervilhas,Doenças Cardíacas,322,Almoço
+Pepino,Diabetes Tipo 1,290,Jantar
+Cenoura,Obesidade,250,Almoço
+Tilápia,Obesidade,467,Almoço
+Abacate,Colesterol Alto,173,Café da Manhã
+Laranja,Doença Celíaca,226,Café da Manhã
+Peito de Frango,Doença Celíaca,448,Almoço
+Pimentão,Diabetes Tipo 1,218,Lanche da Tarde
+Amêndoas,Diabetes Tipo 2,371,Almoço
+Laranja,Obesidade,224,Jantar
+Semente de Linhaça,Colesterol Alto,273,Lanche da Tarde
+Queijo Cottage,Doenças Cardíacas,328,Café da Manhã
+Iogurte Natural,Diabetes Tipo 2,242,Café da Manhã
+Peras,Doenças Cardíacas,254,Almoço
+Tofu,Doença Celíaca,218,Almoço
+Cenoura,Hipertensão,298,Jantar
+Salmão,Colesterol Alto,498,Almoço
+Batata Doce,Nenhuma,209,Jantar
+Pepino,Doenças Cardíacas,110,Café da Manhã
+Carne Magra,Diabetes Tipo 1,432,Almoço
+Tomate,Osteoporose,334,Jantar
+Tilápia,Colesterol Alto,174,Almoço
+Queijo Cottage,Diabetes Tipo 2,235,Lanche da Tarde
+Brócolis,Colesterol Alto,133,Café da Manhã
+Aveia,Osteoporose,146,Almoço
+Feijão Preto,Diabetes Tipo 2,156,Lanche da Tarde
+Semente de Linhaça,Obesidade,349,Lanche da Tarde
+Brócolis,Diabetes Tipo 1,118,Jantar
+Carne Magra,Diabetes Tipo 2,259,Almoço
+Cenoura,Diabetes Tipo 1,143,Jantar
+Maçã,Hipertensão,76,Café da Manhã
+Peras,Insuficiência Renal,267,Lanche da Tarde
+Ovos,Osteoporose,485,Café da Manhã
+Couve,Doenças Cardíacas,390,Lanche da Tarde
+Tofu,Colesterol Alto,353,Lanche da Tarde
+Blueberry,Nenhuma,363,Café da Manhã
+Aveia,Insuficiência Renal,91,Jantar
+Arroz Integral,Nenhuma,276,Jantar
+Semente de Linhaça,Obesidade,462,Lanche da Tarde
+Tilápia,Insuficiência Renal,210,Jantar
+Morango,Obesidade,190,Almoço
+Feijão Preto,Colesterol Alto,138,Jantar
+Tomate,Nenhuma,160,Almoço
+Arroz Integral,Osteoporose,249,Lanche da Tarde
+Batata Doce,Doença Celíaca,494,Jantar
+Morango,Osteoporose,345,Almoço
+Castanha de Caju,Nenhuma,351,Jantar
+Cenoura,Diabetes Tipo 2,211,Café da Manhã
+Maçã,Doença Celíaca,144,Café da Manhã
+Iogurte Natural,Doenças Cardíacas,110,Jantar
+Carne Magra,Diabetes Tipo 1,468,Jantar
+Couve,Obesidade,207,Jantar
+Aveia,Obesidade,426,Almoço
+Feijão Preto,Diabetes Tipo 2,217,Almoço
+Quinoa,Obesidade,369,Almoço
+Peras,Diabetes Tipo 2,200,Café da Manhã
+Carne Magra,Diabetes Tipo 1,277,Jantar
+Abacate,Doença Celíaca,103,Lanche da Tarde
+Pepino,Diabetes Tipo 2,242,Almoço
+Pão Integral,Insuficiência Renal,76,Jantar
+Peras,Diabetes Tipo 1,118,Almoço
+Acelga,Doença Celíaca,93,Jantar
+Tomate,Osteoporose,481,Café da Manhã
+Batata Doce,Doença Celíaca,187,Jantar
+Arroz Integral,Osteoporose,120,Lanche da Tarde
+Castanha de Caju,Doença Celíaca,463,Café da Manhã
+Peito de Frango,Hipertensão,55,Almoço
+Maçã,Hipertensão,51,Café da Manhã
+Arroz Integral,Diabetes Tipo 1,430,Lanche da Tarde
+Lentilhas,Nenhuma,136,Café da Manhã
+Lentilhas,Obesidade,76,Café da Manhã
+Iogurte Natural,Hipertensão,399,Jantar
+Pão Integral,Diabetes Tipo 1,183,Lanche da Tarde
+Carne Magra,Insuficiência Renal,450,Jantar
+Chia,Doença Celíaca,460,Almoço
+Espinafre,Obesidade,350,Café da Manhã
+Semente de Linhaça,Osteoporose,332,Café da Manhã
+Acelga,Osteoporose,128,Lanche da Tarde
+Pepino,Nenhuma,394,Almoço
+Grão-de-Bico,Hipertensão,186,Lanche da Tarde
+Tofu,Colesterol Alto,325,Jantar
+Pepino,Nenhuma,425,Jantar
+Morango,Hipertensão,365,Almoço
+Banana,Diabetes Tipo 2,125,Almoço
+Salmão,Obesidade,224,Café da Manhã
+Tofu,Nenhuma,327,Jantar
+Ovos,Osteoporose,239,Almoço
+Chia,Diabetes Tipo 1,107,Almoço
+Acelga,Osteoporose,460,Café da Manhã
+Brócolis,Insuficiência Renal,103,Café da Manhã
+Castanha de Caju,Doenças Cardíacas,418,Almoço
+Salmão,Osteoporose,171,Jantar
+Abobrinha,Colesterol Alto,456,Almoço
+Arroz Integral,Doenças Cardíacas,388,Jantar
+Castanha de Caju,Doenças Cardíacas,216,Almoço
+Batata Doce,Doenças Cardíacas,499,Jantar
+Ovos,Diabetes Tipo 2,182,Lanche da Tarde
+Peras,Osteoporose,175,Café da Manhã
+Lentilhas,Insuficiência Renal,281,Almoço
+Aveia,Diabetes Tipo 2,453,Almoço
+Arroz Integral,Obesidade,397,Café da Manhã
+Acelga,Doenças Cardíacas,441,Jantar
+Salmão,Nenhuma,418,Almoço
+Cenoura,Diabetes Tipo 2,423,Almoço
+Batata Doce,Doença Celíaca,404,Almoço
+Abacate,Doenças Cardíacas,394,Jantar
+Aveia,Insuficiência Renal,363,Almoço
+Laranja,Obesidade,375,Lanche da Tarde
+Ovos,Diabetes Tipo 2,94,Almoço
+Morango,Diabetes Tipo 2,63,Almoço
+Blueberry,Diabetes Tipo 2,472,Café da Manhã
+Pão Integral,Hipertensão,257,Jantar
+Couve,Doença Celíaca,50,Lanche da Tarde
+Morango,Hipertensão,163,Café da Manhã
+Tofu,Obesidade,485,Jantar
+Aveia,Nenhuma,246,Jantar
+Abacate,Insuficiência Renal,95,Almoço
+Ervilhas,Colesterol Alto,200,Café da Manhã
+Pimentão,Doença Celíaca,336,Jantar
+Morango,Diabetes Tipo 2,82,Lanche da Tarde
+Semente de Linhaça,Colesterol Alto,169,Almoço
+Tilápia,Diabetes Tipo 1,145,Almoço
+Ervilhas,Colesterol Alto,95,Almoço
+Peras,Colesterol Alto,150,Almoço
+Batata Doce,Colesterol Alto,437,Lanche da Tarde
+Brócolis,Obesidade,238,Almoço
+Maçã,Doença Celíaca,469,Jantar
+Tomate,Obesidade,69,Café da Manhã
+Couve,Osteoporose,148,Jantar
+Cenoura,Insuficiência Renal,195,Almoço
+Abacate,Doença Celíaca,286,Café da Manhã
+Aveia,Osteoporose,309,Almoço
+Banana,Doença Celíaca,238,Almoço
+Abacate,Doenças Cardíacas,115,Lanche da Tarde
+Couve,Osteoporose,193,Lanche da Tarde
+Pão Integral,Osteoporose,411,Jantar
+Ovos,Osteoporose,314,Lanche da Tarde
+Espinafre,Obesidade,426,Café da Manhã
+Tofu,Diabetes Tipo 2,358,Café da Manhã
+Semente de Linhaça,Nenhuma,456,Café da Manhã
+Batata Inglesa,Hipertensão,60,Almoço
+Abacate,Nenhuma,94,Almoço
+Salmão,Diabetes Tipo 2,190,Almoço
+Brócolis,Doença Celíaca,53,Almoço
+Semente de Linhaça,Hipertensão,328,Lanche da Tarde
+Acelga,Doença Celíaca,190,Almoço
+Tomate,Diabetes Tipo 1,203,Café da Manhã
+Amêndoas,Doença Celíaca,231,Jantar
+Pepino,Insuficiência Renal,140,Jantar
+Espinafre,Nenhuma,90,Jantar
+Grão-de-Bico,Doenças Cardíacas,219,Café da Manhã
+Ervilhas,Colesterol Alto,178,Jantar
+Aveia,Colesterol Alto,233,Almoço
+Amêndoas,Colesterol Alto,109,Lanche da Tarde
+Couve,Diabetes Tipo 2,280,Jantar
+Banana,Doenças Cardíacas,230,Lanche da Tarde
+Maçã,Diabetes Tipo 2,205,Jantar
+Blueberry,Doença Celíaca,90,Lanche da Tarde
+Couve,Diabetes Tipo 1,263,Lanche da Tarde
+Acelga,Nenhuma,71,Almoço
+Peito de Frango,Diabetes Tipo 2,126,Lanche da Tarde
+Salmão,Diabetes Tipo 2,185,Lanche da Tarde
+Aveia,Diabetes Tipo 1,181,Jantar
+Grão-de-Bico,Diabetes Tipo 2,77,Almoço
+Ervilhas,Colesterol Alto,235,Café da Manhã
+Carne Magra,Obesidade,291,Almoço
+Pão Integral,Nenhuma,394,Café da Manhã
+Chia,Obesidade,227,Jantar
+Feijão Preto,Nenhuma,224,Jantar
+Brócolis,Diabetes Tipo 1,251,Almoço
+Peito de Frango,Hipertensão,86,Lanche da Tarde
+Ervilhas,Doença Celíaca,58,Jantar
+Batata Doce,Diabetes Tipo 2,443,Lanche da Tarde
+Tofu,Hipertensão,435,Lanche da Tarde
+Arroz Integral,Obesidade,216,Café da Manhã
+Abacate,Colesterol Alto,454,Café da Manhã
+Batata Doce,Obesidade,95,Almoço
+Aveia,Hipertensão,395,Jantar
+Queijo Cottage,Insuficiência Renal,222,Café da Manhã
+Semente de Linhaça,Colesterol Alto,139,Almoço
+Aveia,Nenhuma,370,Almoço
+Abobrinha,Doenças Cardíacas,153,Jantar
+Abacate,Diabetes Tipo 2,364,Jantar
+Batata Doce,Osteoporose,376,Café da Manhã
+Tomate,Nenhuma,153,Jantar
+Batata Inglesa,Diabetes Tipo 2,292,Jantar
+Maçã,Diabetes Tipo 2,67,Almoço
+Peito de Frango,Diabetes Tipo 2,317,Lanche da Tarde
+Semente de Linhaça,Hipertensão,67,Café da Manhã
+Tofu,Doenças Cardíacas,343,Lanche da Tarde
+Brócolis,Obesidade,144,Almoço
+Tomate,Diabetes Tipo 1,235,Café da Manhã
+Batata Doce,Doenças Cardíacas,419,Lanche da Tarde
+Queijo Cottage,Osteoporose,251,Jantar
+Pimentão,Insuficiência Renal,318,Jantar
+Carne Magra,Doenças Cardíacas,451,Almoço
+Arroz Integral,Colesterol Alto,176,Jantar
+Maçã,Doenças Cardíacas,342,Café da Manhã
+Abobrinha,Insuficiência Renal,210,Café da Manhã
+Aveia,Insuficiência Renal,433,Jantar
+Espinafre,Doença Celíaca,437,Lanche da Tarde
+Grão-de-Bico,Colesterol Alto,424,Lanche da Tarde
+Morango,Diabetes Tipo 1,167,Almoço
+Feijão Preto,Diabetes Tipo 1,289,Almoço
+Tomate,Colesterol Alto,215,Café da Manhã
+Chia,Colesterol Alto,249,Café da Manhã
+Quinoa,Doença Celíaca,288,Jantar
+Feijão Preto,Osteoporose,239,Almoço
+Salmão,Hipertensão,55,Jantar
+Ervilhas,Osteoporose,195,Lanche da Tarde
+Pão Integral,Doenças Cardíacas,324,Lanche da Tarde
+Tilápia,Hipertensão,68,Café da Manhã
+Semente de Linhaça,Colesterol Alto,387,Jantar
+Cenoura,Hipertensão,83,Jantar
+Acelga,Osteoporose,188,Café da Manhã
+Laranja,Obesidade,355,Lanche da Tarde
+Abacate,Insuficiência Renal,59,Almoço
+Lentilhas,Doença Celíaca,204,Café da Manhã
+Couve,Nenhuma,182,Café da Manhã
+Pão Integral,Nenhuma,410,Café da Manhã
+Castanha de Caju,Osteoporose,139,Café da Manhã
+Tofu,Diabetes Tipo 2,164,Café da Manhã
+Morango,Insuficiência Renal,279,Café da Manhã
+Grão-de-Bico,Nenhuma,377,Lanche da Tarde
+Acelga,Obesidade,403,Lanche da Tarde
+Brócolis,Diabetes Tipo 2,323,Jantar
+Chia,Diabetes Tipo 2,302,Almoço
+Chia,Colesterol Alto,162,Lanche da Tarde
+Peras,Diabetes Tipo 1,67,Jantar
+Amêndoas,Osteoporose,408,Lanche da Tarde
+Lentilhas,Obesidade,250,Jantar
+Grão-de-Bico,Hipertensão,152,Almoço
+Chia,Hipertensão,108,Jantar
+Abobrinha,Doença Celíaca,137,Café da Manhã
+Ovos,Diabetes Tipo 1,489,Lanche da Tarde
+Maçã,Osteoporose,212,Lanche da Tarde
+Espinafre,Osteoporose,279,Jantar
+Iogurte Natural,Diabetes Tipo 1,246,Almoço
+Castanha de Caju,Doença Celíaca,180,Almoço
+Batata Doce,Diabetes Tipo 2,419,Lanche da Tarde
+Tofu,Diabetes Tipo 2,331,Café da Manhã
+Salmão,Diabetes Tipo 2,376,Café da Manhã
+Tofu,Diabetes Tipo 1,188,Almoço
+Lentilhas,Colesterol Alto,69,Jantar
+Abobrinha,Obesidade,479,Jantar
+Pepino,Diabetes Tipo 2,385,Almoço
+Batata Doce,Doença Celíaca,134,Café da Manhã
+Carne Magra,Colesterol Alto,487,Jantar
+Banana,Obesidade,232,Jantar
+Laranja,Colesterol Alto,341,Lanche da Tarde
+Carne Magra,Doença Celíaca,481,Lanche da Tarde
+Quinoa,Diabetes Tipo 2,249,Almoço
+Pimentão,Doença Celíaca,410,Jantar
+Semente de Linhaça,Colesterol Alto,366,Jantar
+Couve,Doenças Cardíacas,86,Lanche da Tarde
+Batata Inglesa,Colesterol Alto,163,Café da Manhã
+Tilápia,Hipertensão,462,Jantar
+Tilápia,Diabetes Tipo 2,478,Lanche da Tarde
+Ervilhas,Insuficiência Renal,96,Jantar
+Amêndoas,Obesidade,443,Almoço
+Feijão Preto,Hipertensão,406,Almoço
+Ovos,Colesterol Alto,137,Almoço
+Laranja,Doença Celíaca,213,Lanche da Tarde
+Arroz Integral,Colesterol Alto,142,Café da Manhã
+Espinafre,Nenhuma,68,Lanche da Tarde
+Chia,Osteoporose,128,Jantar
+Semente de Linhaça,Nenhuma,281,Lanche da Tarde
+Banana,Hipertensão,198,Almoço
+Maçã,Colesterol Alto,86,Jantar
+Peito de Frango,Obesidade,378,Jantar
+Blueberry,Osteoporose,418,Lanche da Tarde
+Grão-de-Bico,Insuficiência Renal,409,Lanche da Tarde
+Lentilhas,Insuficiência Renal,63,Jantar
+Aveia,Diabetes Tipo 2,157,Jantar
+Pimentão,Obesidade,327,Jantar
+Tomate,Doenças Cardíacas,365,Almoço
+Blueberry,Colesterol Alto,289,Almoço
+Salmão,Colesterol Alto,239,Jantar
+Abacate,Doenças Cardíacas,338,Café da Manhã
+Salmão,Hipertensão,80,Lanche da Tarde
+Carne Magra,Hipertensão,123,Café da Manhã
+Salmão,Nenhuma,141,Almoço
+Laranja,Diabetes Tipo 2,495,Jantar
+Carne Magra,Diabetes Tipo 1,462,Lanche da Tarde
+Carne Magra,Osteoporose,362,Jantar
+Abobrinha,Doenças Cardíacas,329,Café da Manhã
+Pimentão,Obesidade,398,Lanche da Tarde
+Peito de Frango,Diabetes Tipo 1,490,Jantar
+Brócolis,Hipertensão,372,Lanche da Tarde
+Couve,Diabetes Tipo 1,326,Almoço
+Castanha de Caju,Nenhuma,392,Lanche da Tarde
+Queijo Cottage,Doenças Cardíacas,146,Jantar
+Batata Inglesa,Insuficiência Renal,441,Café da Manhã
+Cenoura,Nenhuma,490,Jantar
+Acelga,Colesterol Alto,327,Almoço
+Arroz Integral,Osteoporose,134,Jantar
+Aveia,Colesterol Alto,453,Lanche da Tarde
+Queijo Cottage,Doença Celíaca,395,Café da Manhã
+Pimentão,Nenhuma,225,Lanche da Tarde
+Peras,Insuficiência Renal,471,Lanche da Tarde
+Ovos,Diabetes Tipo 2,138,Café da Manhã
+Aveia,Insuficiência Renal,389,Café da Manhã
+Pimentão,Osteoporose,489,Almoço
+Banana,Diabetes Tipo 1,220,Almoço
+Peito de Frango,Nenhuma,63,Lanche da Tarde
+Salmão,Doenças Cardíacas,478,Jantar
+Amêndoas,Obesidade,141,Almoço
+Chia,Insuficiência Renal,392,Jantar
+Espinafre,Hipertensão,397,Lanche da Tarde
+Quinoa,Insuficiência Renal,181,Jantar
+Arroz Integral,Doenças Cardíacas,491,Almoço
+Batata Doce,Doenças Cardíacas,211,Lanche da Tarde
+Peito de Frango,Obesidade,335,Jantar
+Aveia,Diabetes Tipo 1,391,Almoço
+Espinafre,Obesidade,116,Almoço
+Semente de Linhaça,Obesidade,88,Lanche da Tarde
+Aveia,Insuficiência Renal,458,Jantar
+Aveia,Nenhuma,259,Café da Manhã
+Quinoa,Nenhuma,127,Almoço
+Pepino,Diabetes Tipo 2,283,Lanche da Tarde
+Peito de Frango,Nenhuma,75,Lanche da Tarde
+Pão Integral,Nenhuma,87,Lanche da Tarde
+Cenoura,Hipertensão,320,Café da Manhã
+Peito de Frango,Osteoporose,463,Café da Manhã
+Tofu,Diabetes Tipo 2,417,Almoço
+Blueberry,Insuficiência Renal,441,Lanche da Tarde
+Aveia,Doenças Cardíacas,364,Jantar
+Peito de Frango,Diabetes Tipo 2,461,Café da Manhã
+Couve,Colesterol Alto,462,Café da Manhã
+Blueberry,Osteoporose,392,Café da Manhã
+Ervilhas,Doenças Cardíacas,118,Café da Manhã
+Pepino,Doenças Cardíacas,330,Jantar
+Ervilhas,Diabetes Tipo 2,281,Lanche da Tarde
+Quinoa,Nenhuma,204,Almoço
+Batata Doce,Diabetes Tipo 2,300,Jantar
+Ervilhas,Doenças Cardíacas,187,Café da Manhã
+Cenoura,Diabetes Tipo 2,493,Almoço
+Tilápia,Colesterol Alto,411,Café da Manhã
+Amêndoas,Doença Celíaca,294,Jantar
+Feijão Preto,Doenças Cardíacas,233,Café da Manhã
+Grão-de-Bico,Nenhuma,377,Almoço
+Morango,Doenças Cardíacas,134,Almoço
+Aveia,Insuficiência Renal,445,Lanche da Tarde
+Maçã,Insuficiência Renal,248,Lanche da Tarde
+Amêndoas,Hipertensão,398,Jantar
+Brócolis,Nenhuma,415,Lanche da Tarde
+Pepino,Obesidade,308,Lanche da Tarde
+Pão Integral,Obesidade,217,Almoço
+Batata Doce,Diabetes Tipo 1,107,Almoço
+Aveia,Obesidade,300,Jantar
+Amêndoas,Diabetes Tipo 2,461,Café da Manhã
+Pimentão,Diabetes Tipo 2,465,Jantar
+Pepino,Osteoporose,469,Almoço
+Batata Doce,Insuficiência Renal,190,Café da Manhã
+Chia,Doença Celíaca,370,Lanche da Tarde
+Tilápia,Obesidade,305,Café da Manhã
+Aveia,Obesidade,201,Lanche da Tarde
+Espinafre,Doença Celíaca,183,Café da Manhã
+Abacate,Diabetes Tipo 1,233,Jantar
+Banana,Doença Celíaca,242,Lanche da Tarde
+Abacate,Hipertensão,341,Almoço
+Ovos,Doenças Cardíacas,433,Lanche da Tarde
+Carne Magra,Colesterol Alto,60,Lanche da Tarde
+Chia,Osteoporose,207,Café da Manhã
+Morango,Osteoporose,369,Jantar
+Laranja,Colesterol Alto,354,Jantar
+Abobrinha,Colesterol Alto,260,Almoço
+Brócolis,Osteoporose,109,Café da Manhã
+Laranja,Doenças Cardíacas,166,Almoço
+Aveia,Colesterol Alto,225,Almoço
+Couve,Insuficiência Renal,495,Lanche da Tarde
+Chia,Nenhuma,188,Lanche da Tarde
+Pão Integral,Hipertensão,197,Jantar
+Espinafre,Insuficiência Renal,279,Lanche da Tarde
+Amêndoas,Insuficiência Renal,127,Café da Manhã
+Ervilhas,Colesterol Alto,235,Café da Manhã
+Pimentão,Doenças Cardíacas,86,Almoço
+Feijão Preto,Hipertensão,53,Café da Manhã
+Ervilhas,Colesterol Alto,469,Jantar
+Chia,Nenhuma,296,Jantar
+Acelga,Hipertensão,380,Lanche da Tarde
+Aveia,Diabetes Tipo 2,134,Café da Manhã
+Blueberry,Hipertensão,398,Café da Manhã
+Pepino,Colesterol Alto,122,Jantar
+Abacate,Insuficiência Renal,58,Almoço
+Tofu,Insuficiência Renal,430,Lanche da Tarde
+Carne Magra,Doenças Cardíacas,247,Café da Manhã
+Arroz Integral,Nenhuma,271,Café da Manhã
+Pepino,Diabetes Tipo 2,493,Almoço
+Aveia,Obesidade,258,Almoço
+Blueberry,Obesidade,491,Almoço
+Carne Magra,Diabetes Tipo 2,422,Lanche da Tarde
+Blueberry,Doença Celíaca,392,Almoço
+Pepino,Nenhuma,277,Café da Manhã
+Aveia,Nenhuma,100,Café da Manhã
+Tomate,Hipertensão,405,Lanche da Tarde
+Maçã,Diabetes Tipo 1,130,Almoço
+Espinafre,Diabetes Tipo 2,167,Lanche da Tarde
+Aveia,Doença Celíaca,461,Lanche da Tarde
+Salmão,Nenhuma,146,Jantar
+Semente de Linhaça,Obesidade,353,Lanche da Tarde
+Acelga,Nenhuma,61,Lanche da Tarde
+Salmão,Osteoporose,132,Almoço
+Tomate,Obesidade,266,Lanche da Tarde
+Grão-de-Bico,Doença Celíaca,74,Jantar
+Abobrinha,Doenças Cardíacas,178,Lanche da Tarde
+Abacate,Insuficiência Renal,159,Lanche da Tarde
+Maçã,Insuficiência Renal,494,Café da Manhã
+Couve,Nenhuma,250,Jantar
+Laranja,Hipertensão,137,Almoço
+Ervilhas,Doenças Cardíacas,51,Jantar
+Amêndoas,Doença Celíaca,301,Lanche da Tarde
+Lentilhas,Obesidade,399,Café da Manhã
+Ervilhas,Insuficiência Renal,97,Almoço
+Morango,Doenças Cardíacas,152,Lanche da Tarde
+Amêndoas,Colesterol Alto,280,Jantar
+Peito de Frango,Osteoporose,286,Almoço
+Abobrinha,Doença Celíaca,484,Almoço
+Banana,Colesterol Alto,261,Almoço
+Espinafre,Nenhuma,175,Lanche da Tarde
+Salmão,Hipertensão,267,Lanche da Tarde
+Salmão,Diabetes Tipo 1,176,Almoço
+Abobrinha,Obesidade,288,Café da Manhã
+Abobrinha,Nenhuma,391,Almoço
+Iogurte Natural,Osteoporose,84,Lanche da Tarde
+Queijo Cottage,Diabetes Tipo 2,344,Lanche da Tarde
+Laranja,Nenhuma,292,Lanche da Tarde
+Amêndoas,Osteoporose,433,Lanche da Tarde
+Tilápia,Osteoporose,411,Almoço
+Brócolis,Diabetes Tipo 1,355,Café da Manhã
+Arroz Integral,Osteoporose,438,Jantar
+Peito de Frango,Insuficiência Renal,261,Almoço
+Banana,Osteoporose,357,Jantar
+Lentilhas,Osteoporose,339,Lanche da Tarde
+Amêndoas,Diabetes Tipo 2,391,Jantar
+Amêndoas,Nenhuma,182,Jantar
+Queijo Cottage,Colesterol Alto,485,Almoço
+Pepino,Obesidade,267,Café da Manhã
+Aveia,Hipertensão,431,Café da Manhã
+Castanha de Caju,Osteoporose,293,Almoço
+Tofu,Nenhuma,121,Café da Manhã
+Carne Magra,Osteoporose,490,Almoço
+Queijo Cottage,Doenças Cardíacas,176,Almoço
+Salmão,Nenhuma,342,Café da Manhã
+Couve,Osteoporose,101,Lanche da Tarde
+Chia,Insuficiência Renal,273,Almoço
+Tofu,Obesidade,111,Café da Manhã
+Peito de Frango,Diabetes Tipo 2,239,Jantar
+Lentilhas,Doença Celíaca,417,Jantar
+Pimentão,Osteoporose,244,Almoço
+Pimentão,Nenhuma,491,Café da Manhã
+Batata Inglesa,Diabetes Tipo 1,203,Café da Manhã
+Feijão Preto,Obesidade,446,Almoço
+Ovos,Insuficiência Renal,294,Jantar
+Feijão Preto,Nenhuma,495,Almoço
+Espinafre,Colesterol Alto,427,Almoço
+Amêndoas,Doenças Cardíacas,431,Jantar
+Tilápia,Hipertensão,439,Jantar
+Maçã,Hipertensão,213,Lanche da Tarde
+Tilápia,Obesidade,272,Lanche da Tarde
+Chia,Diabetes Tipo 1,294,Jantar
+Peras,Nenhuma,230,Jantar
+Tomate,Insuficiência Renal,187,Almoço
+Peito de Frango,Hipertensão,99,Jantar
+Couve,Obesidade,234,Café da Manhã
+Tomate,Diabetes Tipo 2,207,Almoço
+Couve,Hipertensão,253,Café da Manhã
+Peito de Frango,Osteoporose,239,Jantar
+Carne Magra,Hipertensão,468,Café da Manhã
+Amêndoas,Doenças Cardíacas,298,Jantar
+Chia,Colesterol Alto,428,Almoço
+Tomate,Diabetes Tipo 2,477,Almoço
+Amêndoas,Osteoporose,339,Jantar
+Abobrinha,Doença Celíaca,428,Almoço
+Batata Doce,Nenhuma,206,Almoço
+Ovos,Nenhuma,72,Lanche da Tarde
+Tilápia,Osteoporose,139,Jantar
+Maçã,Hipertensão,67,Almoço
+Morango,Diabetes Tipo 1,305,Almoço
+Lentilhas,Obesidade,83,Café da Manhã
+Espinafre,Osteoporose,147,Jantar
+Aveia,Nenhuma,139,Lanche da Tarde
+Aveia,Diabetes Tipo 2,429,Jantar
+Ovos,Colesterol Alto,57,Café da Manhã
+Brócolis,Insuficiência Renal,242,Café da Manhã
+Abacate,Diabetes Tipo 1,318,Café da Manhã
+Pimentão,Doenças Cardíacas,291,Almoço
+Cenoura,Doença Celíaca,377,Lanche da Tarde
+Brócolis,Insuficiência Renal,478,Café da Manhã
+Lentilhas,Colesterol Alto,137,Café da Manhã
+Abobrinha,Diabetes Tipo 2,88,Lanche da Tarde
+Quinoa,Diabetes Tipo 2,52,Café da Manhã
+Ervilhas,Doenças Cardíacas,493,Almoço
+Pão Integral,Osteoporose,123,Café da Manhã
+Ovos,Hipertensão,464,Almoço
+Couve,Insuficiência Renal,240,Jantar
+Batata Doce,Nenhuma,356,Jantar
+Morango,Diabetes Tipo 1,204,Jantar
+Semente de Linhaça,Hipertensão,62,Lanche da Tarde
+Batata Doce,Diabetes Tipo 2,452,Almoço
+Peras,Doença Celíaca,291,Jantar
+Grão-de-Bico,Nenhuma,463,Lanche da Tarde
+Tofu,Diabetes Tipo 2,236,Lanche da Tarde
+Ovos,Osteoporose,472,Almoço
+Semente de Linhaça,Hipertensão,297,Café da Manhã
+Iogurte Natural,Obesidade,376,Jantar
+Morango,Nenhuma,116,Jantar
+Quinoa,Osteoporose,174,Café da Manhã
+Tofu,Doença Celíaca,355,Café da Manhã
+Chia,Insuficiência Renal,298,Café da Manhã
+Grão-de-Bico,Obesidade,229,Café da Manhã
+Cenoura,Diabetes Tipo 2,386,Jantar
+Acelga,Doenças Cardíacas,337,Almoço
+Batata Doce,Doenças Cardíacas,186,Lanche da Tarde
+Pimentão,Nenhuma,411,Café da Manhã
+Pão Integral,Diabetes Tipo 2,409,Jantar
+Castanha de Caju,Osteoporose,209,Jantar
+Pimentão,Colesterol Alto,459,Jantar
+Tomate,Insuficiência Renal,68,Lanche da Tarde
+Arroz Integral,Osteoporose,398,Café da Manhã
+Feijão Preto,Doenças Cardíacas,371,Café da Manhã
+Cenoura,Diabetes Tipo 2,491,Café da Manhã
+Peito de Frango,Insuficiência Renal,396,Almoço
+Couve,Nenhuma,165,Lanche da Tarde
+Banana,Osteoporose,464,Jantar
+Tilápia,Osteoporose,455,Almoço
+Peito de Frango,Nenhuma,422,Lanche da Tarde
+Ovos,Osteoporose,381,Café da Manhã
+Abobrinha,Doença Celíaca,341,Café da Manhã
+Peras,Insuficiência Renal,175,Jantar
+Tofu,Insuficiência Renal,232,Café da Manhã
+Tomate,Nenhuma,370,Jantar
+Pão Integral,Osteoporose,299,Almoço
+Abacate,Insuficiência Renal,113,Lanche da Tarde
+Espinafre,Insuficiência Renal,266,Lanche da Tarde
+Aveia,Diabetes Tipo 1,224,Lanche da Tarde
+Peras,Hipertensão,146,Almoço
+Pimentão,Insuficiência Renal,218,Lanche da Tarde
+Tilápia,Hipertensão,108,Jantar
+Cenoura,Nenhuma,374,Lanche da Tarde
+Tofu,Diabetes Tipo 2,463,Jantar
+Tilápia,Colesterol Alto,101,Almoço
+Ervilhas,Diabetes Tipo 1,104,Almoço
+Tofu,Hipertensão,106,Lanche da Tarde
+Pimentão,Hipertensão,388,Lanche da Tarde
+Blueberry,Doenças Cardíacas,102,Almoço
+Ovos,Doença Celíaca,151,Almoço
+Acelga,Colesterol Alto,116,Almoço
+Tilápia,Doenças Cardíacas,421,Almoço
+Banana,Hipertensão,83,Almoço
+Morango,Obesidade,461,Jantar
+Arroz Integral,Insuficiência Renal,415,Almoço
+Maçã,Colesterol Alto,348,Jantar
+Morango,Colesterol Alto,419,Jantar
+Pimentão,Hipertensão,56,Café da Manhã
+Chia,Diabetes Tipo 2,487,Lanche da Tarde
+Aveia,Obesidade,143,Lanche da Tarde
+Aveia,Osteoporose,82,Lanche da Tarde
+Salmão,Colesterol Alto,409,Almoço
+Blueberry,Diabetes Tipo 2,457,Café da Manhã
+Lentilhas,Hipertensão,215,Lanche da Tarde
+Pimentão,Nenhuma,188,Café da Manhã
+Cenoura,Obesidade,443,Café da Manhã
+Ovos,Doença Celíaca,371,Almoço
+Peito de Frango,Nenhuma,370,Lanche da Tarde
+Tomate,Obesidade,53,Jantar
+Peras,Diabetes Tipo 1,203,Jantar
+Iogurte Natural,Osteoporose,239,Café da Manhã
+Iogurte Natural,Insuficiência Renal,154,Almoço
+Ervilhas,Doença Celíaca,254,Jantar
+Batata Doce,Diabetes Tipo 2,245,Jantar
+Chia,Hipertensão,276,Lanche da Tarde
+Batata Doce,Insuficiência Renal,269,Almoço
+Feijão Preto,Diabetes Tipo 2,99,Café da Manhã
+Couve,Obesidade,51,Jantar
+Pepino,Diabetes Tipo 1,314,Lanche da Tarde
+Morango,Doença Celíaca,152,Lanche da Tarde
+Queijo Cottage,Diabetes Tipo 2,147,Lanche da Tarde
+Laranja,Colesterol Alto,413,Lanche da Tarde
+Arroz Integral,Hipertensão,145,Lanche da Tarde
+Espinafre,Diabetes Tipo 1,207,Almoço
+Peito de Frango,Diabetes Tipo 2,98,Lanche da Tarde
+Abobrinha,Doenças Cardíacas,238,Almoço
+Abobrinha,Doença Celíaca,302,Lanche da Tarde
+Couve,Diabetes Tipo 1,415,Café da Manhã
+Banana,Hipertensão,255,Almoço
+Couve,Obesidade,206,Café da Manhã
+Peito de Frango,Nenhuma,130,Jantar
+Peito de Frango,Insuficiência Renal,277,Almoço
+Abobrinha,Doença Celíaca,138,Lanche da Tarde
+Acelga,Hipertensão,351,Lanche da Tarde
+Blueberry,Insuficiência Renal,440,Almoço
+Lentilhas,Doença Celíaca,324,Jantar
+Abacate,Osteoporose,362,Lanche da Tarde
+Brócolis,Hipertensão,211,Almoço
+Pão Integral,Hipertensão,58,Almoço
+Blueberry,Colesterol Alto,384,Lanche da Tarde
+Tofu,Nenhuma,196,Lanche da Tarde
+Laranja,Diabetes Tipo 2,237,Jantar
+Tomate,Osteoporose,89,Lanche da Tarde
+Aveia,Osteoporose,202,Almoço
+Castanha de Caju,Doença Celíaca,446,Café da Manhã
+Iogurte Natural,Doença Celíaca,59,Almoço
+Castanha de Caju,Doença Celíaca,403,Almoço
+Couve,Nenhuma,305,Jantar
+Cenoura,Nenhuma,483,Lanche da Tarde
+Chia,Obesidade,403,Lanche da Tarde
+Salmão,Nenhuma,100,Jantar
+Grão-de-Bico,Nenhuma,266,Lanche da Tarde
+Queijo Cottage,Doenças Cardíacas,449,Café da Manhã
+Abacate,Doenças Cardíacas,288,Café da Manhã
+Cenoura,Obesidade,217,Almoço
+Pimentão,Osteoporose,376,Almoço
+Aveia,Doenças Cardíacas,367,Almoço
+Queijo Cottage,Osteoporose,451,Jantar
+Couve,Diabetes Tipo 2,442,Café da Manhã
+Pão Integral,Doença Celíaca,161,Café da Manhã
+Grão-de-Bico,Osteoporose,499,Almoço
+Iogurte Natural,Colesterol Alto,185,Jantar
+Grão-de-Bico,Hipertensão,326,Almoço
+Ervilhas,Diabetes Tipo 1,218,Lanche da Tarde
+Tomate,Insuficiência Renal,122,Café da Manhã
+Iogurte Natural,Diabetes Tipo 2,422,Almoço
+Ervilhas,Osteoporose,178,Jantar
+Aveia,Nenhuma,425,Almoço
+Ervilhas,Doença Celíaca,91,Café da Manhã
+Batata Inglesa,Obesidade,436,Lanche da Tarde
+Salmão,Diabetes Tipo 2,82,Lanche da Tarde
+Aveia,Diabetes Tipo 1,430,Café da Manhã
+Blueberry,Doenças Cardíacas,60,Almoço
+Abobrinha,Diabetes Tipo 2,442,Café da Manhã
+Ovos,Osteoporose,71,Jantar
+Morango,Colesterol Alto,169,Jantar
+Chia,Insuficiência Renal,107,Almoço
+Aveia,Osteoporose,95,Café da Manhã
+Chia,Nenhuma,373,Jantar
+Tilápia,Diabetes Tipo 2,247,Lanche da Tarde
+Laranja,Colesterol Alto,333,Almoço
+Peito de Frango,Obesidade,268,Jantar
+Batata Doce,Diabetes Tipo 1,446,Almoço
+Lentilhas,Diabetes Tipo 1,370,Lanche da Tarde
+Quinoa,Colesterol Alto,53,Lanche da Tarde
+Acelga,Diabetes Tipo 1,495,Lanche da Tarde
+Batata Doce,Diabetes Tipo 1,477,Almoço
+Abobrinha,Diabetes Tipo 2,146,Lanche da Tarde
+Tilápia,Insuficiência Renal,90,Jantar
+Iogurte Natural,Colesterol Alto,70,Lanche da Tarde
+Aveia,Nenhuma,320,Jantar
+Castanha de Caju,Insuficiência Renal,74,Almoço
+Blueberry,Diabetes Tipo 2,373,Lanche da Tarde
+Pão Integral,Hipertensão,338,Café da Manhã
+Peras,Nenhuma,379,Jantar
+Tilápia,Colesterol Alto,376,Jantar
+Abobrinha,Obesidade,117,Café da Manhã
+Iogurte Natural,Doença Celíaca,364,Jantar
+Quinoa,Obesidade,462,Café da Manhã
+Pepino,Doença Celíaca,53,Jantar
+Aveia,Diabetes Tipo 2,274,Lanche da Tarde
+Aveia,Nenhuma,472,Almoço
+Pimentão,Nenhuma,158,Lanche da Tarde
+Batata Doce,Obesidade,398,Jantar
+Tilápia,Diabetes Tipo 1,292,Café da Manhã
+Quinoa,Obesidade,247,Lanche da Tarde
+Iogurte Natural,Diabetes Tipo 2,51,Lanche da Tarde
+Brócolis,Hipertensão,195,Almoço
+Iogurte Natural,Doenças Cardíacas,240,Café da Manhã
+Ovos,Insuficiência Renal,481,Café da Manhã
+Banana,Osteoporose,314,Café da Manhã
+Pepino,Doenças Cardíacas,379,Jantar
+Carne Magra,Obesidade,486,Lanche da Tarde
+Maçã,Obesidade,447,Café da Manhã
+Queijo Cottage,Osteoporose,418,Lanche da Tarde
+Blueberry,Colesterol Alto,91,Café da Manhã
+Brócolis,Diabetes Tipo 2,74,Almoço
+Arroz Integral,Colesterol Alto,113,Café da Manhã
+Pepino,Diabetes Tipo 2,121,Café da Manhã
+Iogurte Natural,Doença Celíaca,119,Almoço
+Carne Magra,Diabetes Tipo 2,153,Lanche da Tarde
+Cenoura,Doenças Cardíacas,198,Café da Manhã
+Lentilhas,Doença Celíaca,373,Café da Manhã
+Aveia,Diabetes Tipo 1,499,Almoço
+Blueberry,Colesterol Alto,251,Jantar
+Queijo Cottage,Nenhuma,396,Jantar
+Carne Magra,Hipertensão,371,Almoço
+Queijo Cottage,Hipertensão,218,Lanche da Tarde
+Quinoa,Insuficiência Renal,418,Almoço
+Banana,Nenhuma,408,Café da Manhã
+Amêndoas,Doença Celíaca,480,Café da Manhã
+Iogurte Natural,Hipertensão,455,Lanche da Tarde
+Aveia,Hipertensão,382,Almoço
+Iogurte Natural,Diabetes Tipo 2,120,Lanche da Tarde
+Chia,Insuficiência Renal,466,Almoço
+Grão-de-Bico,Doença Celíaca,476,Café da Manhã
+Banana,Diabetes Tipo 2,390,Café da Manhã
+Ovos,Doenças Cardíacas,254,Lanche da Tarde
+Banana,Insuficiência Renal,392,Almoço
+Ovos,Doenças Cardíacas,70,Café da Manhã
+Ervilhas,Insuficiência Renal,159,Café da Manhã
+Ervilhas,Osteoporose,467,Almoço
+Abobrinha,Obesidade,466,Lanche da Tarde
+Arroz Integral,Osteoporose,315,Lanche da Tarde
+Castanha de Caju,Nenhuma,237,Lanche da Tarde
+Tomate,Colesterol Alto,150,Jantar
+Feijão Preto,Doenças Cardíacas,181,Lanche da Tarde
+Morango,Colesterol Alto,283,Lanche da Tarde
+Pão Integral,Insuficiência Renal,113,Café da Manhã
+Batata Inglesa,Diabetes Tipo 2,112,Almoço
+Peras,Doenças Cardíacas,442,Lanche da Tarde
+Maçã,Doenças Cardíacas,334,Jantar
+Pimentão,Colesterol Alto,293,Café da Manhã
+Batata Inglesa,Obesidade,63,Lanche da Tarde
+Lentilhas,Obesidade,377,Lanche da Tarde
+Tomate,Insuficiência Renal,432,Jantar
+Lentilhas,Doenças Cardíacas,165,Jantar
+Amêndoas,Osteoporose,446,Café da Manhã
+Espinafre,Obesidade,436,Jantar
+Ovos,Doenças Cardíacas,278,Lanche da Tarde
+Salmão,Obesidade,159,Almoço
+Queijo Cottage,Insuficiência Renal,127,Jantar
+Tofu,Diabetes Tipo 1,329,Lanche da Tarde
+Aveia,Colesterol Alto,432,Café da Manhã
+Ovos,Doença Celíaca,281,Almoço
+Maçã,Nenhuma,237,Café da Manhã
+Banana,Obesidade,299,Lanche da Tarde
+Feijão Preto,Diabetes Tipo 2,168,Almoço
+Pepino,Nenhuma,251,Café da Manhã
+Pepino,Osteoporose,281,Lanche da Tarde
+Peras,Hipertensão,432,Café da Manhã
+Lentilhas,Diabetes Tipo 1,385,Jantar
+Lentilhas,Hipertensão,61,Lanche da Tarde
+Carne Magra,Nenhuma,59,Almoço
+Batata Doce,Insuficiência Renal,368,Lanche da Tarde
+Semente de Linhaça,Hipertensão,115,Almoço
+Blueberry,Obesidade,268,Jantar
+Blueberry,Hipertensão,445,Café da Manhã
+Amêndoas,Colesterol Alto,401,Almoço
+Castanha de Caju,Hipertensão,354,Café da Manhã
+Pepino,Doenças Cardíacas,364,Lanche da Tarde
+Quinoa,Insuficiência Renal,125,Lanche da Tarde
+Quinoa,Diabetes Tipo 2,179,Almoço
+Abacate,Nenhuma,171,Jantar
+Batata Doce,Obesidade,459,Lanche da Tarde
+Semente de Linhaça,Obesidade,336,Café da Manhã
+Lentilhas,Insuficiência Renal,467,Lanche da Tarde
+Morango,Hipertensão,286,Lanche da Tarde
+Iogurte Natural,Nenhuma,137,Jantar
+Castanha de Caju,Insuficiência Renal,326,Café da Manhã
+Tilápia,Colesterol Alto,355,Almoço
+Batata Inglesa,Obesidade,442,Lanche da Tarde
+Pepino,Insuficiência Renal,370,Lanche da Tarde
+Pão Integral,Nenhuma,468,Lanche da Tarde
+Carne Magra,Diabetes Tipo 2,208,Jantar
+Banana,Osteoporose,408,Lanche da Tarde
+Morango,Insuficiência Renal,215,Lanche da Tarde
+Ovos,Hipertensão,328,Almoço
+Chia,Doenças Cardíacas,111,Almoço
+Laranja,Hipertensão,348,Café da Manhã
+Cenoura,Diabetes Tipo 2,354,Almoço
+Abacate,Obesidade,155,Café da Manhã
+Abobrinha,Hipertensão,70,Almoço
+Maçã,Osteoporose,477,Café da Manhã
+Salmão,Osteoporose,441,Café da Manhã
+Peras,Diabetes Tipo 2,243,Lanche da Tarde
+Lentilhas,Osteoporose,170,Jantar
+Espinafre,Hipertensão,479,Café da Manhã
+Grão-de-Bico,Hipertensão,80,Jantar
+Abobrinha,Osteoporose,190,Lanche da Tarde
+Queijo Cottage,Doença Celíaca,362,Café da Manhã
+Grão-de-Bico,Doenças Cardíacas,199,Café da Manhã
+Feijão Preto,Nenhuma,247,Jantar
+Acelga,Doenças Cardíacas,66,Lanche da Tarde
+Semente de Linhaça,Doença Celíaca,93,Jantar
+Espinafre,Colesterol Alto,432,Jantar
+Pão Integral,Doença Celíaca,73,Almoço
+Cenoura,Diabetes Tipo 2,218,Almoço
+Aveia,Obesidade,471,Almoço
+Pimentão,Hipertensão,417,Lanche da Tarde
+Tofu,Diabetes Tipo 2,482,Lanche da Tarde
+Morango,Diabetes Tipo 2,345,Almoço
+Tilápia,Insuficiência Renal,154,Lanche da Tarde
+Abobrinha,Insuficiência Renal,344,Lanche da Tarde
+Tofu,Nenhuma,477,Almoço
+Iogurte Natural,Nenhuma,226,Almoço
+Laranja,Diabetes Tipo 1,434,Almoço
+Tilápia,Hipertensão,187,Jantar
+Batata Doce,Diabetes Tipo 1,302,Almoço
+Brócolis,Doença Celíaca,449,Almoço
+Morango,Colesterol Alto,486,Jantar
+Maçã,Diabetes Tipo 2,286,Almoço
+Cenoura,Doença Celíaca,103,Lanche da Tarde
+Queijo Cottage,Diabetes Tipo 1,304,Lanche da Tarde
+Tofu,Doença Celíaca,438,Café da Manhã
+Chia,Diabetes Tipo 1,206,Jantar
+Lentilhas,Insuficiência Renal,85,Lanche da Tarde
+Cenoura,Obesidade,70,Café da Manhã
+Espinafre,Doenças Cardíacas,312,Almoço
+Cenoura,Colesterol Alto,91,Café da Manhã
+Aveia,Obesidade,465,Jantar
+Brócolis,Nenhuma,267,Almoço
+Tilápia,Insuficiência Renal,386,Jantar
+Aveia,Insuficiência Renal,288,Café da Manhã
+Batata Doce,Doenças Cardíacas,447,Lanche da Tarde
+Ovos,Diabetes Tipo 1,467,Almoço
+Grão-de-Bico,Doença Celíaca,195,Almoço
+Pão Integral,Colesterol Alto,161,Lanche da Tarde
+Chia,Doenças Cardíacas,115,Café da Manhã
+Couve,Nenhuma,139,Jantar
+Salmão,Doenças Cardíacas,97,Lanche da Tarde
+Feijão Preto,Diabetes Tipo 1,392,Lanche da Tarde
+Cenoura,Diabetes Tipo 1,92,Almoço
+Pimentão,Colesterol Alto,200,Almoço
+Semente de Linhaça,Diabetes Tipo 2,373,Café da Manhã
+Quinoa,Diabetes Tipo 1,197,Lanche da Tarde
+Peras,Obesidade,352,Almoço
+Batata Inglesa,Nenhuma,335,Almoço
+Arroz Integral,Colesterol Alto,296,Café da Manhã
+Tilápia,Doença Celíaca,374,Café da Manhã
+Carne Magra,Insuficiência Renal,415,Café da Manhã
+Batata Inglesa,Nenhuma,464,Jantar
+Grão-de-Bico,Diabetes Tipo 1,222,Lanche da Tarde
+Cenoura,Osteoporose,467,Jantar
+Carne Magra,Nenhuma,310,Café da Manhã
+Ovos,Insuficiência Renal,471,Jantar
+Arroz Integral,Hipertensão,102,Lanche da Tarde
+Batata Doce,Doenças Cardíacas,370,Lanche da Tarde
+Amêndoas,Obesidade,67,Jantar
+Feijão Preto,Obesidade,195,Jantar
+Abacate,Obesidade,473,Lanche da Tarde
+Iogurte Natural,Insuficiência Renal,154,Almoço
+Tilápia,Insuficiência Renal,324,Jantar
+Maçã,Diabetes Tipo 2,439,Café da Manhã
+Abacate,Doenças Cardíacas,404,Lanche da Tarde
+Carne Magra,Doença Celíaca,437,Almoço
+Castanha de Caju,Osteoporose,364,Lanche da Tarde
+Pimentão,Insuficiência Renal,50,Café da Manhã
+Pão Integral,Diabetes Tipo 2,169,Café da Manhã
+Amêndoas,Osteoporose,85,Lanche da Tarde
+Pimentão,Diabetes Tipo 1,331,Café da Manhã
+Pão Integral,Colesterol Alto,390,Almoço
+Couve,Nenhuma,143,Almoço
+Ovos,Obesidade,499,Café da Manhã
+Pepino,Osteoporose,448,Lanche da Tarde
+Pimentão,Nenhuma,94,Lanche da Tarde
+Tofu,Diabetes Tipo 2,280,Lanche da Tarde
+Acelga,Doenças Cardíacas,310,Almoço
+Maçã,Colesterol Alto,248,Jantar
+Brócolis,Insuficiência Renal,195,Jantar
+Ervilhas,Colesterol Alto,271,Café da Manhã
+Amêndoas,Obesidade,495,Almoço
+Salmão,Diabetes Tipo 2,362,Café da Manhã
+Couve,Hipertensão,435,Café da Manhã
+Acelga,Diabetes Tipo 1,322,Almoço
+Abobrinha,Doença Celíaca,244,Almoço
+Couve,Diabetes Tipo 1,128,Café da Manhã
+Tofu,Hipertensão,412,Jantar
+Tomate,Doença Celíaca,227,Jantar
+Abobrinha,Nenhuma,74,Lanche da Tarde
+Acelga,Obesidade,375,Jantar
+Quinoa,Doenças Cardíacas,427,Café da Manhã
+Tilápia,Diabetes Tipo 1,455,Almoço
+Cenoura,Nenhuma,58,Café da Manhã
+Aveia,Hipertensão,250,Café da Manhã
+Tilápia,Diabetes Tipo 2,339,Café da Manhã
+Semente de Linhaça,Diabetes Tipo 1,119,Almoço
+Aveia,Doenças Cardíacas,146,Lanche da Tarde
+Ervilhas,Obesidade,306,Jantar
+Semente de Linhaça,Colesterol Alto,349,Lanche da Tarde
+Couve,Nenhuma,421,Jantar
+Queijo Cottage,Diabetes Tipo 2,312,Lanche da Tarde
+Espinafre,Colesterol Alto,448,Almoço
+Tilápia,Hipertensão,215,Almoço
+Tilápia,Colesterol Alto,398,Lanche da Tarde
+Blueberry,Doença Celíaca,359,Café da Manhã
+Ovos,Doenças Cardíacas,79,Jantar
+Maçã,Nenhuma,399,Café da Manhã
+Couve,Osteoporose,170,Almoço
+Grão-de-Bico,Colesterol Alto,172,Almoço
+Castanha de Caju,Diabetes Tipo 2,279,Café da Manhã
+Banana,Diabetes Tipo 2,181,Almoço
+Laranja,Obesidade,124,Almoço
+Laranja,Obesidade,347,Jantar
+Tomate,Doença Celíaca,473,Café da Manhã
+Amêndoas,Colesterol Alto,146,Lanche da Tarde
+Tofu,Colesterol Alto,466,Café da Manhã
+Queijo Cottage,Nenhuma,206,Lanche da Tarde
+Castanha de Caju,Doenças Cardíacas,320,Lanche da Tarde
+Chia,Colesterol Alto,404,Lanche da Tarde
+Amêndoas,Doença Celíaca,368,Café da Manhã
+Maçã,Diabetes Tipo 2,367,Jantar
+Banana,Doença Celíaca,407,Jantar
+Couve,Hipertensão,277,Almoço
+Espinafre,Hipertensão,373,Café da Manhã
+Feijão Preto,Doenças Cardíacas,447,Café da Manhã
+Carne Magra,Diabetes Tipo 2,452,Almoço
+Laranja,Diabetes Tipo 2,387,Café da Manhã
+Carne Magra,Nenhuma,367,Almoço
+Banana,Doenças Cardíacas,340,Almoço
+Castanha de Caju,Hipertensão,148,Lanche da Tarde
+Tomate,Doença Celíaca,389,Almoço
+Cenoura,Obesidade,125,Lanche da Tarde
+Couve,Diabetes Tipo 2,455,Lanche da Tarde
+Batata Doce,Nenhuma,181,Almoço
+Salmão,Diabetes Tipo 2,163,Almoço
+Brócolis,Colesterol Alto,84,Almoço
+Lentilhas,Osteoporose,261,Almoço
+Pepino,Nenhuma,396,Almoço
+Tilápia,Diabetes Tipo 2,250,Jantar
+Pepino,Colesterol Alto,469,Café da Manhã
+Laranja,Diabetes Tipo 2,254,Almoço
+Tilápia,Osteoporose,156,Jantar
+Cenoura,Hipertensão,274,Lanche da Tarde
+Acelga,Hipertensão,227,Jantar
+Tomate,Nenhuma,61,Jantar
+Ovos,Doença Celíaca,154,Café da Manhã
+Morango,Doenças Cardíacas,372,Almoço
+Amêndoas,Doenças Cardíacas,290,Jantar
+Acelga,Colesterol Alto,328,Jantar
+Laranja,Nenhuma,246,Almoço
+Abacate,Doença Celíaca,347,Lanche da Tarde
+Aveia,Doenças Cardíacas,348,Lanche da Tarde
+Cenoura,Diabetes Tipo 2,449,Café da Manhã
+Abobrinha,Obesidade,237,Café da Manhã
+Espinafre,Nenhuma,366,Almoço
+Pimentão,Diabetes Tipo 2,387,Café da Manhã
+Semente de Linhaça,Diabetes Tipo 1,409,Café da Manhã
+Pão Integral,Diabetes Tipo 1,255,Jantar
+Peras,Doenças Cardíacas,145,Jantar
+Pimentão,Obesidade,405,Almoço
+Acelga,Nenhuma,430,Café da Manhã
+Tofu,Nenhuma,419,Lanche da Tarde
+Batata Doce,Hipertensão,53,Almoço
+Blueberry,Doença Celíaca,479,Jantar
+Blueberry,Obesidade,203,Almoço
+Lentilhas,Hipertensão,357,Jantar
+Espinafre,Colesterol Alto,462,Jantar
+Tomate,Nenhuma,388,Almoço
+Castanha de Caju,Diabetes Tipo 2,158,Café da Manhã
+Pimentão,Hipertensão,273,Almoço
+Pepino,Diabetes Tipo 1,457,Lanche da Tarde
+Batata Doce,Obesidade,160,Café da Manhã
+Blueberry,Osteoporose,316,Jantar
+Feijão Preto,Diabetes Tipo 2,447,Lanche da Tarde
+Couve,Hipertensão,383,Café da Manhã
+Ovos,Colesterol Alto,63,Jantar
+Chia,Osteoporose,371,Lanche da Tarde
+Ovos,Nenhuma,53,Almoço
+Feijão Preto,Insuficiência Renal,190,Almoço
+Tofu,Colesterol Alto,58,Café da Manhã
+Abacate,Doença Celíaca,316,Almoço
+Morango,Insuficiência Renal,431,Café da Manhã
+Lentilhas,Hipertensão,312,Almoço
+Tomate,Doença Celíaca,358,Café da Manhã
+Grão-de-Bico,Osteoporose,465,Café da Manhã
+Semente de Linhaça,Obesidade,425,Lanche da Tarde
+Grão-de-Bico,Insuficiência Renal,349,Almoço
+Cenoura,Hipertensão,199,Lanche da Tarde
+Morango,Diabetes Tipo 1,319,Almoço
+Semente de Linhaça,Obesidade,377,Almoço
+Castanha de Caju,Doenças Cardíacas,351,Almoço
+Morango,Hipertensão,78,Lanche da Tarde
+Tofu,Nenhuma,388,Jantar
+Peito de Frango,Diabetes Tipo 2,463,Lanche da Tarde
+Ervilhas,Doenças Cardíacas,367,Lanche da Tarde
+Grão-de-Bico,Colesterol Alto,460,Almoço
+Carne Magra,Diabetes Tipo 1,356,Café da Manhã
+Banana,Doença Celíaca,65,Almoço
+Pão Integral,Insuficiência Renal,480,Almoço
+Queijo Cottage,Colesterol Alto,371,Café da Manhã
+Arroz Integral,Osteoporose,159,Almoço
+Ervilhas,Osteoporose,229,Jantar
+Acelga,Osteoporose,331,Lanche da Tarde
+Acelga,Diabetes Tipo 2,68,Lanche da Tarde
+Aveia,Nenhuma,89,Lanche da Tarde
+Peito de Frango,Doença Celíaca,226,Jantar
+Banana,Doença Celíaca,351,Lanche da Tarde
+Acelga,Doenças Cardíacas,456,Café da Manhã
+Batata Doce,Hipertensão,77,Lanche da Tarde
+Banana,Osteoporose,94,Almoço
+Banana,Osteoporose,216,Almoço
+Batata Doce,Hipertensão,291,Lanche da Tarde
+Aveia,Doença Celíaca,50,Jantar
+Couve,Insuficiência Renal,187,Café da Manhã
+Castanha de Caju,Hipertensão,72,Almoço
+Semente de Linhaça,Nenhuma,375,Jantar
+Feijão Preto,Nenhuma,175,Café da Manhã
+Tomate,Osteoporose,457,Café da Manhã
+Grão-de-Bico,Colesterol Alto,376,Lanche da Tarde
+Couve,Obesidade,392,Lanche da Tarde
+Ovos,Doença Celíaca,371,Almoço
+Aveia,Osteoporose,489,Café da Manhã
+Arroz Integral,Osteoporose,233,Jantar
+Tomate,Colesterol Alto,460,Café da Manhã
+Maçã,Diabetes Tipo 1,209,Jantar
+Abacate,Colesterol Alto,453,Jantar
+Feijão Preto,Doença Celíaca,495,Jantar
+Grão-de-Bico,Colesterol Alto,331,Jantar
+Peito de Frango,Osteoporose,377,Jantar
+Queijo Cottage,Insuficiência Renal,61,Lanche da Tarde
+Blueberry,Colesterol Alto,429,Café da Manhã
+Laranja,Diabetes Tipo 1,235,Jantar
+Batata Doce,Obesidade,105,Jantar
+Iogurte Natural,Doença Celíaca,323,Almoço
+Carne Magra,Obesidade,488,Lanche da Tarde
+Batata Inglesa,Insuficiência Renal,154,Café da Manhã
+Banana,Colesterol Alto,306,Café da Manhã
+Ovos,Osteoporose,317,Jantar
+Pepino,Hipertensão,86,Lanche da Tarde
+Quinoa,Diabetes Tipo 1,277,Jantar
+Queijo Cottage,Doença Celíaca,255,Lanche da Tarde
+Peito de Frango,Osteoporose,302,Lanche da Tarde
+Ervilhas,Osteoporose,314,Café da Manhã
+Laranja,Diabetes Tipo 2,369,Jantar
+Semente de Linhaça,Insuficiência Renal,444,Lanche da Tarde
+Tomate,Insuficiência Renal,267,Almoço
+Lentilhas,Colesterol Alto,283,Café da Manhã
+Batata Doce,Nenhuma,59,Café da Manhã
+Tilápia,Nenhuma,168,Lanche da Tarde
+Acelga,Diabetes Tipo 1,134,Café da Manhã
+Ervilhas,Diabetes Tipo 2,310,Almoço
+Ovos,Doença Celíaca,493,Almoço
+Blueberry,Diabetes Tipo 1,89,Jantar
+Peito de Frango,Nenhuma,258,Café da Manhã
+Tomate,Osteoporose,288,Lanche da Tarde
+Cenoura,Diabetes Tipo 1,256,Jantar
+Feijão Preto,Doenças Cardíacas,265,Jantar
+Peras,Obesidade,288,Jantar
+Ervilhas,Colesterol Alto,358,Lanche da Tarde
+Abobrinha,Diabetes Tipo 2,405,Jantar
+Brócolis,Doenças Cardíacas,173,Almoço
+Peito de Frango,Hipertensão,98,Café da Manhã
+Amêndoas,Hipertensão,336,Café da Manhã
+Ovos,Doenças Cardíacas,53,Almoço
+Cenoura,Diabetes Tipo 2,60,Jantar
+Pão Integral,Hipertensão,338,Almoço
+Aveia,Diabetes Tipo 1,199,Almoço
+Quinoa,Doenças Cardíacas,475,Café da Manhã
+Cenoura,Hipertensão,428,Almoço
+Tilápia,Doença Celíaca,160,Almoço
+Salmão,Colesterol Alto,403,Lanche da Tarde
+Carne Magra,Hipertensão,196,Almoço
+Espinafre,Diabetes Tipo 1,275,Café da Manhã
+Peito de Frango,Diabetes Tipo 2,229,Café da Manhã
+Couve,Hipertensão,254,Jantar
+Couve,Colesterol Alto,241,Café da Manhã
+Abacate,Diabetes Tipo 2,102,Almoço
+Peras,Doenças Cardíacas,395,Café da Manhã
+Espinafre,Diabetes Tipo 1,229,Jantar
+Tofu,Obesidade,398,Café da Manhã
+Quinoa,Hipertensão,219,Almoço
+Banana,Doença Celíaca,323,Almoço
+Batata Doce,Diabetes Tipo 2,448,Lanche da Tarde
+Peito de Frango,Diabetes Tipo 2,365,Lanche da Tarde
+Lentilhas,Osteoporose,366,Jantar
+Feijão Preto,Obesidade,63,Jantar
+Morango,Osteoporose,147,Café da Manhã
+Quinoa,Doenças Cardíacas,328,Café da Manhã
+Grão-de-Bico,Diabetes Tipo 1,294,Jantar
+Tilápia,Nenhuma,495,Jantar
+Aveia,Nenhuma,394,Jantar
+Pão Integral,Doença Celíaca,464,Jantar
+Maçã,Doença Celíaca,444,Almoço
+Chia,Doenças Cardíacas,181,Café da Manhã
+Abacate,Nenhuma,209,Lanche da Tarde
+Peito de Frango,Insuficiência Renal,82,Jantar
+Blueberry,Doença Celíaca,447,Almoço
+Cenoura,Insuficiência Renal,227,Lanche da Tarde
+Pão Integral,Osteoporose,89,Jantar
+Feijão Preto,Insuficiência Renal,434,Jantar
+Cenoura,Doenças Cardíacas,288,Café da Manhã
+Arroz Integral,Insuficiência Renal,74,Jantar
+Brócolis,Obesidade,390,Lanche da Tarde
+Couve,Doenças Cardíacas,93,Café da Manhã
+Batata Inglesa,Osteoporose,411,Café da Manhã
+Tofu,Diabetes Tipo 1,268,Lanche da Tarde
+Brócolis,Hipertensão,269,Almoço
+Acelga,Colesterol Alto,140,Almoço
+Feijão Preto,Hipertensão,403,Jantar
+Quinoa,Colesterol Alto,396,Jantar
+Morango,Nenhuma,475,Almoço
+Feijão Preto,Doença Celíaca,209,Almoço
+Carne Magra,Colesterol Alto,90,Almoço
+Ervilhas,Diabetes Tipo 1,273,Lanche da Tarde
+Arroz Integral,Doença Celíaca,314,Jantar
+Pimentão,Nenhuma,483,Almoço
+Laranja,Diabetes Tipo 2,214,Almoço
+Cenoura,Doenças Cardíacas,387,Jantar
+Lentilhas,Diabetes Tipo 2,400,Lanche da Tarde
+Aveia,Diabetes Tipo 2,435,Lanche da Tarde
+Queijo Cottage,Obesidade,236,Almoço
+Tilápia,Hipertensão,335,Café da Manhã
+Pimentão,Osteoporose,295,Almoço
+Peras,Hipertensão,258,Almoço
+Pepino,Doença Celíaca,134,Jantar
+Batata Doce,Hipertensão,186,Lanche da Tarde
+Chia,Doenças Cardíacas,169,Jantar
+Pão Integral,Diabetes Tipo 2,342,Lanche da Tarde
+Aveia,Colesterol Alto,399,Café da Manhã
+Chia,Colesterol Alto,237,Jantar
+Tomate,Colesterol Alto,285,Café da Manhã
+Quinoa,Obesidade,158,Jantar
+Pepino,Nenhuma,321,Lanche da Tarde
+Feijão Preto,Obesidade,63,Café da Manhã
+Semente de Linhaça,Nenhuma,203,Café da Manhã
+Couve,Osteoporose,304,Almoço
+Abobrinha,Obesidade,279,Lanche da Tarde
+Abacate,Insuficiência Renal,258,Jantar
+Aveia,Doença Celíaca,356,Jantar
+Pepino,Diabetes Tipo 2,445,Café da Manhã
+Castanha de Caju,Diabetes Tipo 2,352,Jantar
+Batata Inglesa,Colesterol Alto,180,Almoço
+Ervilhas,Nenhuma,211,Jantar
+Pepino,Insuficiência Renal,140,Almoço
+Amêndoas,Doenças Cardíacas,219,Lanche da Tarde
+Semente de Linhaça,Doenças Cardíacas,307,Lanche da Tarde
+Grão-de-Bico,Doenças Cardíacas,460,Lanche da Tarde
+Batata Doce,Doenças Cardíacas,389,Café da Manhã
+Tofu,Doença Celíaca,461,Café da Manhã
+Ovos,Insuficiência Renal,299,Lanche da Tarde
+Banana,Nenhuma,149,Jantar
+Blueberry,Osteoporose,200,Jantar
+Ovos,Hipertensão,267,Almoço
+Semente de Linhaça,Hipertensão,266,Jantar
+Pimentão,Obesidade,414,Jantar
+Blueberry,Nenhuma,390,Jantar
+Amêndoas,Diabetes Tipo 1,470,Almoço
+Pão Integral,Diabetes Tipo 1,295,Lanche da Tarde
+Quinoa,Insuficiência Renal,458,Café da Manhã
+Espinafre,Colesterol Alto,80,Lanche da Tarde
+Semente de Linhaça,Nenhuma,190,Lanche da Tarde
+Quinoa,Osteoporose,358,Jantar
+Abobrinha,Diabetes Tipo 1,297,Café da Manhã
+Castanha de Caju,Diabetes Tipo 1,284,Almoço
+Pão Integral,Diabetes Tipo 2,106,Jantar
+Peras,Osteoporose,270,Jantar
+Lentilhas,Obesidade,292,Almoço
+Tilápia,Osteoporose,118,Almoço
+Quinoa,Diabetes Tipo 1,499,Lanche da Tarde
+Aveia,Colesterol Alto,119,Lanche da Tarde
+Iogurte Natural,Doenças Cardíacas,222,Jantar
+Batata Inglesa,Colesterol Alto,391,Almoço
+Semente de Linhaça,Doença Celíaca,300,Lanche da Tarde
+Peras,Obesidade,163,Jantar
+Abacate,Doenças Cardíacas,458,Almoço
+Laranja,Diabetes Tipo 2,186,Jantar
+Aveia,Osteoporose,298,Almoço
+Maçã,Diabetes Tipo 2,172,Jantar
+Batata Inglesa,Osteoporose,418,Lanche da Tarde
+Salmão,Obesidade,428,Almoço
+Pepino,Diabetes Tipo 1,464,Café da Manhã
+Peras,Insuficiência Renal,338,Almoço
+Aveia,Osteoporose,391,Café da Manhã
+Castanha de Caju,Nenhuma,235,Café da Manhã
+Amêndoas,Osteoporose,423,Jantar
+Pimentão,Colesterol Alto,390,Jantar
+Tomate,Obesidade,387,Jantar
+Batata Inglesa,Colesterol Alto,176,Almoço
+Carne Magra,Doença Celíaca,195,Jantar
+Tomate,Doença Celíaca,381,Almoço
+Aveia,Diabetes Tipo 1,452,Lanche da Tarde
+Tilápia,Doenças Cardíacas,427,Jantar
+Carne Magra,Diabetes Tipo 2,213,Café da Manhã
+Espinafre,Doença Celíaca,364,Jantar
+Abacate,Doença Celíaca,135,Jantar
+Cenoura,Doença Celíaca,349,Lanche da Tarde
+Maçã,Hipertensão,497,Almoço
+Abobrinha,Doenças Cardíacas,404,Café da Manhã
+Grão-de-Bico,Diabetes Tipo 1,421,Jantar
+Banana,Nenhuma,147,Almoço
+Peras,Insuficiência Renal,205,Lanche da Tarde
+Peras,Colesterol Alto,497,Lanche da Tarde
+Carne Magra,Colesterol Alto,101,Lanche da Tarde
+Banana,Doenças Cardíacas,109,Almoço
+Queijo Cottage,Diabetes Tipo 1,214,Almoço
+Laranja,Diabetes Tipo 1,226,Lanche da Tarde
+Feijão Preto,Diabetes Tipo 1,275,Café da Manhã
+Salmão,Diabetes Tipo 2,445,Café da Manhã
+Abobrinha,Insuficiência Renal,287,Almoço
+Acelga,Obesidade,122,Lanche da Tarde
+Couve,Obesidade,285,Café da Manhã
+Morango,Osteoporose,399,Almoço
+Pepino,Doença Celíaca,467,Café da Manhã
+Abobrinha,Diabetes Tipo 1,225,Café da Manhã
+Aveia,Diabetes Tipo 2,192,Almoço
+Lentilhas,Diabetes Tipo 1,416,Café da Manhã
+Semente de Linhaça,Diabetes Tipo 2,209,Almoço
+Queijo Cottage,Obesidade,265,Café da Manhã
+Banana,Doenças Cardíacas,369,Jantar
+Brócolis,Insuficiência Renal,221,Café da Manhã
+Cenoura,Nenhuma,71,Almoço
+Iogurte Natural,Diabetes Tipo 1,436,Lanche da Tarde
+Maçã,Doenças Cardíacas,204,Jantar
+Aveia,Diabetes Tipo 2,278,Lanche da Tarde
+Couve,Insuficiência Renal,59,Jantar
+Abacate,Osteoporose,435,Lanche da Tarde
+Tomate,Diabetes Tipo 1,490,Almoço
+Peito de Frango,Diabetes Tipo 1,373,Almoço
+Abacate,Osteoporose,387,Café da Manhã
+Pão Integral,Insuficiência Renal,307,Café da Manhã
+Ovos,Doença Celíaca,162,Lanche da Tarde
+Ovos,Insuficiência Renal,336,Almoço
+Peito de Frango,Doenças Cardíacas,84,Café da Manhã
+Feijão Preto,Osteoporose,481,Lanche da Tarde
+Peras,Colesterol Alto,482,Almoço
+Aveia,Doença Celíaca,60,Almoço
+Arroz Integral,Doenças Cardíacas,299,Lanche da Tarde
+Carne Magra,Diabetes Tipo 2,184,Jantar
+Espinafre,Insuficiência Renal,55,Café da Manhã
+Abobrinha,Diabetes Tipo 1,348,Lanche da Tarde
+Carne Magra,Nenhuma,248,Jantar
+Batata Inglesa,Diabetes Tipo 1,155,Jantar
+Iogurte Natural,Hipertensão,216,Jantar
+Grão-de-Bico,Doenças Cardíacas,55,Café da Manhã
+Semente de Linhaça,Hipertensão,366,Café da Manhã
+Batata Doce,Doença Celíaca,208,Almoço
+Abobrinha,Hipertensão,109,Jantar
+Peito de Frango,Colesterol Alto,58,Almoço
+Brócolis,Doença Celíaca,241,Jantar
+Blueberry,Doença Celíaca,259,Almoço
+Amêndoas,Doença Celíaca,425,Almoço
+Ervilhas,Nenhuma,136,Lanche da Tarde
+Quinoa,Osteoporose,181,Jantar
+Lentilhas,Colesterol Alto,321,Almoço
+Pão Integral,Doença Celíaca,152,Almoço
+Peras,Hipertensão,416,Café da Manhã
+Laranja,Obesidade,400,Almoço
+Batata Doce,Nenhuma,56,Almoço
+Arroz Integral,Nenhuma,143,Lanche da Tarde
+Peito de Frango,Nenhuma,72,Jantar
+Lentilhas,Obesidade,60,Almoço
+Lentilhas,Diabetes Tipo 2,206,Almoço
+Aveia,Hipertensão,441,Lanche da Tarde
+Peras,Diabetes Tipo 1,397,Jantar
+Aveia,Diabetes Tipo 1,133,Almoço
+Aveia,Diabetes Tipo 1,52,Almoço
+Tomate,Doenças Cardíacas,421,Lanche da Tarde
+Tilápia,Diabetes Tipo 2,377,Lanche da Tarde
+Brócolis,Insuficiência Renal,229,Jantar
+Iogurte Natural,Insuficiência Renal,325,Jantar
+Acelga,Nenhuma,293,Almoço
+Chia,Nenhuma,144,Almoço
+Pepino,Doença Celíaca,336,Lanche da Tarde
+Arroz Integral,Osteoporose,176,Jantar
+Banana,Doença Celíaca,333,Lanche da Tarde
+Acelga,Nenhuma,321,Jantar
+Espinafre,Colesterol Alto,97,Jantar
+Espinafre,Insuficiência Renal,73,Jantar
+Blueberry,Doença Celíaca,492,Jantar
+Batata Inglesa,Insuficiência Renal,400,Lanche da Tarde
+Semente de Linhaça,Hipertensão,186,Jantar
+Castanha de Caju,Insuficiência Renal,191,Café da Manhã
+Quinoa,Obesidade,344,Jantar
+Peito de Frango,Colesterol Alto,216,Almoço
+Morango,Colesterol Alto,308,Lanche da Tarde
+Pimentão,Colesterol Alto,348,Café da Manhã
+Abobrinha,Diabetes Tipo 1,101,Almoço
+Iogurte Natural,Hipertensão,118,Almoço
+Blueberry,Obesidade,344,Lanche da Tarde
+Cenoura,Diabetes Tipo 2,247,Café da Manhã
+Queijo Cottage,Colesterol Alto,109,Lanche da Tarde
+Tofu,Diabetes Tipo 2,497,Café da Manhã
+Pepino,Diabetes Tipo 2,487,Jantar
+Aveia,Insuficiência Renal,112,Café da Manhã
+Tilápia,Insuficiência Renal,416,Lanche da Tarde
+Pimentão,Doenças Cardíacas,164,Almoço
+Batata Inglesa,Nenhuma,467,Almoço
+Iogurte Natural,Diabetes Tipo 1,138,Almoço
+Quinoa,Insuficiência Renal,158,Café da Manhã
+Feijão Preto,Doença Celíaca,270,Almoço
+Banana,Obesidade,263,Café da Manhã
+Banana,Insuficiência Renal,303,Almoço
+Couve,Diabetes Tipo 2,222,Lanche da Tarde
+Aveia,Colesterol Alto,192,Lanche da Tarde
+Amêndoas,Diabetes Tipo 1,292,Jantar
+Arroz Integral,Obesidade,422,Café da Manhã
+Amêndoas,Doenças Cardíacas,246,Café da Manhã
+Blueberry,Osteoporose,411,Almoço
+Tomate,Hipertensão,131,Almoço
+Aveia,Colesterol Alto,257,Jantar
+Espinafre,Colesterol Alto,203,Café da Manhã
+Batata Doce,Osteoporose,497,Almoço
+Carne Magra,Obesidade,214,Café da Manhã
+Quinoa,Obesidade,446,Almoço
+Arroz Integral,Diabetes Tipo 2,88,Almoço
+Acelga,Insuficiência Renal,237,Café da Manhã
+Acelga,Obesidade,80,Lanche da Tarde
+Cenoura,Diabetes Tipo 2,404,Lanche da Tarde
+Morango,Diabetes Tipo 2,389,Jantar
+Amêndoas,Obesidade,81,Jantar
+Batata Doce,Osteoporose,406,Almoço
+Tofu,Osteoporose,283,Café da Manhã
+Tomate,Nenhuma,381,Almoço
+Banana,Insuficiência Renal,57,Almoço
+Pepino,Doença Celíaca,119,Lanche da Tarde
+Quinoa,Nenhuma,383,Jantar
+Aveia,Obesidade,496,Lanche da Tarde
+Pimentão,Insuficiência Renal,480,Jantar
+Arroz Integral,Obesidade,82,Almoço
+Grão-de-Bico,Diabetes Tipo 2,82,Lanche da Tarde
+Chia,Insuficiência Renal,78,Almoço
+Iogurte Natural,Nenhuma,62,Jantar
+Iogurte Natural,Doença Celíaca,143,Lanche da Tarde
+Couve,Osteoporose,124,Almoço
+Amêndoas,Diabetes Tipo 2,105,Lanche da Tarde
+Cenoura,Diabetes Tipo 1,379,Café da Manhã
+Batata Inglesa,Diabetes Tipo 2,355,Almoço
+Espinafre,Obesidade,69,Almoço
+Espinafre,Nenhuma,264,Lanche da Tarde
+Iogurte Natural,Diabetes Tipo 2,457,Jantar
+Tilápia,Colesterol Alto,80,Almoço
+Grão-de-Bico,Colesterol Alto,494,Café da Manhã
+Espinafre,Diabetes Tipo 2,486,Jantar
+Amêndoas,Osteoporose,319,Jantar
+Espinafre,Diabetes Tipo 1,337,Lanche da Tarde
+Laranja,Diabetes Tipo 1,236,Café da Manhã
+Iogurte Natural,Doença Celíaca,302,Lanche da Tarde
+Semente de Linhaça,Obesidade,194,Lanche da Tarde
+Aveia,Nenhuma,324,Lanche da Tarde
+Ovos,Hipertensão,435,Jantar
+Maçã,Nenhuma,65,Lanche da Tarde
+Castanha de Caju,Colesterol Alto,210,Café da Manhã
+Abobrinha,Obesidade,128,Almoço
+Pão Integral,Osteoporose,379,Café da Manhã
+Aveia,Doença Celíaca,312,Almoço
+Tomate,Obesidade,293,Jantar
+Cenoura,Insuficiência Renal,417,Café da Manhã
+Ovos,Doenças Cardíacas,245,Jantar
+Batata Doce,Doenças Cardíacas,120,Jantar
+Blueberry,Obesidade,424,Lanche da Tarde
+Iogurte Natural,Diabetes Tipo 1,257,Lanche da Tarde
+Peras,Obesidade,271,Café da Manhã
+Semente de Linhaça,Obesidade,391,Almoço
+Laranja,Diabetes Tipo 1,229,Lanche da Tarde
+Arroz Integral,Obesidade,380,Jantar
+Arroz Integral,Colesterol Alto,236,Lanche da Tarde
+Aveia,Nenhuma,397,Lanche da Tarde
+Abobrinha,Osteoporose,460,Lanche da Tarde
+Ervilhas,Obesidade,76,Café da Manhã
+Blueberry,Insuficiência Renal,283,Jantar
+Queijo Cottage,Diabetes Tipo 2,118,Lanche da Tarde
+Pão Integral,Doença Celíaca,365,Café da Manhã
+Batata Inglesa,Colesterol Alto,463,Almoço
+Iogurte Natural,Insuficiência Renal,226,Jantar
+Pimentão,Insuficiência Renal,398,Almoço
+Batata Doce,Hipertensão,367,Jantar
+Peras,Hipertensão,238,Café da Manhã
+Batata Inglesa,Obesidade,449,Café da Manhã
+Brócolis,Diabetes Tipo 1,416,Jantar
+Pepino,Colesterol Alto,141,Café da Manhã
+Morango,Nenhuma,474,Almoço
+Tomate,Obesidade,210,Café da Manhã
+Aveia,Insuficiência Renal,223,Jantar
+Peito de Frango,Doença Celíaca,163,Jantar
+Aveia,Colesterol Alto,448,Lanche da Tarde
+Blueberry,Colesterol Alto,374,Lanche da Tarde
+Chia,Obesidade,395,Lanche da Tarde
+Feijão Preto,Insuficiência Renal,318,Jantar
+Tofu,Colesterol Alto,222,Café da Manhã
+Quinoa,Osteoporose,411,Café da Manhã
+Batata Doce,Doença Celíaca,365,Almoço
+Feijão Preto,Doenças Cardíacas,476,Jantar
+Banana,Insuficiência Renal,497,Café da Manhã
+Chia,Doença Celíaca,358,Café da Manhã
+Lentilhas,Hipertensão,447,Lanche da Tarde
+Pão Integral,Obesidade,486,Lanche da Tarde
+Espinafre,Hipertensão,228,Café da Manhã
+Queijo Cottage,Insuficiência Renal,170,Lanche da Tarde
+Tofu,Osteoporose,484,Jantar
+Peras,Diabetes Tipo 2,419,Lanche da Tarde
+Maçã,Doença Celíaca,279,Jantar
+Cenoura,Colesterol Alto,166,Jantar
+Amêndoas,Insuficiência Renal,232,Café da Manhã
+Semente de Linhaça,Diabetes Tipo 2,389,Almoço
+Peras,Doenças Cardíacas,394,Lanche da Tarde
+Batata Inglesa,Obesidade,427,Almoço
+Grão-de-Bico,Osteoporose,225,Jantar
+Grão-de-Bico,Nenhuma,137,Lanche da Tarde
+Pão Integral,Diabetes Tipo 2,479,Lanche da Tarde
+Couve,Diabetes Tipo 1,112,Lanche da Tarde
+Tomate,Hipertensão,316,Lanche da Tarde
+Cenoura,Colesterol Alto,144,Almoço
+Salmão,Diabetes Tipo 2,146,Café da Manhã
+Salmão,Obesidade,410,Jantar
+Brócolis,Diabetes Tipo 2,104,Lanche da Tarde
+Carne Magra,Osteoporose,400,Lanche da Tarde
+Castanha de Caju,Diabetes Tipo 1,184,Lanche da Tarde
+Brócolis,Diabetes Tipo 1,459,Lanche da Tarde
+Queijo Cottage,Osteoporose,55,Jantar
+Laranja,Nenhuma,233,Café da Manhã
+Brócolis,Colesterol Alto,273,Almoço
+Couve,Diabetes Tipo 1,97,Almoço
+Carne Magra,Osteoporose,461,Almoço
+Maçã,Diabetes Tipo 1,395,Café da Manhã
+Espinafre,Diabetes Tipo 2,467,Almoço
+Castanha de Caju,Insuficiência Renal,269,Almoço
+Laranja,Colesterol Alto,450,Jantar
+Pimentão,Insuficiência Renal,194,Café da Manhã
+Batata Doce,Doenças Cardíacas,385,Café da Manhã
+Morango,Colesterol Alto,272,Café da Manhã
+Tofu,Nenhuma,468,Lanche da Tarde
+Cenoura,Nenhuma,493,Almoço
+Aveia,Osteoporose,119,Jantar
+Grão-de-Bico,Diabetes Tipo 1,122,Almoço
+Ovos,Obesidade,194,Café da Manhã
+Pepino,Colesterol Alto,280,Lanche da Tarde
+Pepino,Hipertensão,357,Café da Manhã
+Carne Magra,Doença Celíaca,142,Lanche da Tarde
+Acelga,Diabetes Tipo 2,183,Café da Manhã
+Chia,Hipertensão,50,Jantar
+Peito de Frango,Nenhuma,261,Lanche da Tarde
+Carne Magra,Doenças Cardíacas,73,Café da Manhã
+Tomate,Doenças Cardíacas,208,Jantar
+Espinafre,Osteoporose,294,Almoço
+Espinafre,Hipertensão,160,Café da Manhã
+Brócolis,Colesterol Alto,344,Lanche da Tarde
+Semente de Linhaça,Doenças Cardíacas,218,Jantar
+Acelga,Hipertensão,276,Lanche da Tarde
+Iogurte Natural,Doença Celíaca,131,Café da Manhã
+Feijão Preto,Colesterol Alto,177,Jantar
+Abobrinha,Colesterol Alto,449,Almoço
+Batata Inglesa,Doença Celíaca,124,Almoço
+Peras,Diabetes Tipo 2,324,Almoço
+Semente de Linhaça,Diabetes Tipo 1,333,Almoço
+Queijo Cottage,Osteoporose,357,Jantar
+Ervilhas,Hipertensão,430,Lanche da Tarde
+Acelga,Diabetes Tipo 2,476,Lanche da Tarde
+Morango,Hipertensão,256,Almoço
+Morango,Diabetes Tipo 2,353,Almoço
+Arroz Integral,Hipertensão,387,Café da Manhã
+Lentilhas,Diabetes Tipo 1,302,Almoço
+Couve,Insuficiência Renal,425,Café da Manhã
+Banana,Doenças Cardíacas,219,Jantar
+Tofu,Nenhuma,286,Almoço
+Pimentão,Osteoporose,437,Jantar
+Maçã,Diabetes Tipo 2,167,Lanche da Tarde
+Tomate,Colesterol Alto,459,Almoço
+Salmão,Diabetes Tipo 1,266,Café da Manhã
+Tilápia,Colesterol Alto,414,Lanche da Tarde
+Aveia,Colesterol Alto,265,Jantar
+Batata Inglesa,Diabetes Tipo 1,385,Lanche da Tarde
+Tilápia,Osteoporose,71,Jantar
+Ovos,Doenças Cardíacas,110,Almoço
+Aveia,Insuficiência Renal,79,Café da Manhã
+Chia,Nenhuma,72,Jantar
+Salmão,Insuficiência Renal,74,Jantar
+Pimentão,Insuficiência Renal,117,Café da Manhã
+Iogurte Natural,Diabetes Tipo 2,187,Café da Manhã
+Cenoura,Doenças Cardíacas,88,Lanche da Tarde
+Aveia,Diabetes Tipo 2,370,Lanche da Tarde
+Abacate,Obesidade,385,Almoço
+Semente de Linhaça,Doenças Cardíacas,192,Jantar
+Carne Magra,Obesidade,119,Café da Manhã
+Quinoa,Doenças Cardíacas,131,Café da Manhã
+Quinoa,Nenhuma,236,Lanche da Tarde
+Ovos,Diabetes Tipo 1,411,Jantar
+Acelga,Obesidade,117,Lanche da Tarde
+Abobrinha,Doença Celíaca,290,Café da Manhã
+Semente de Linhaça,Colesterol Alto,261,Jantar
+Abobrinha,Nenhuma,132,Almoço
+Morango,Nenhuma,413,Almoço
+Abacate,Doença Celíaca,227,Almoço
+Morango,Obesidade,163,Lanche da Tarde
+Grão-de-Bico,Diabetes Tipo 1,435,Almoço
+Feijão Preto,Nenhuma,185,Lanche da Tarde
+Banana,Hipertensão,58,Café da Manhã
+Peras,Hipertensão,81,Café da Manhã
+Queijo Cottage,Doenças Cardíacas,174,Café da Manhã
+Pão Integral,Osteoporose,320,Café da Manhã
+Blueberry,Nenhuma,256,Lanche da Tarde
+Peras,Colesterol Alto,454,Café da Manhã
+Cenoura,Insuficiência Renal,196,Café da Manhã
+Chia,Diabetes Tipo 2,289,Jantar
+Arroz Integral,Doença Celíaca,213,Almoço
+Peito de Frango,Diabetes Tipo 1,350,Lanche da Tarde
+Ervilhas,Doença Celíaca,409,Café da Manhã
+Peras,Obesidade,209,Lanche da Tarde
+Pepino,Nenhuma,243,Lanche da Tarde
+Espinafre,Doença Celíaca,268,Lanche da Tarde
+Tilápia,Doenças Cardíacas,299,Jantar
+Iogurte Natural,Diabetes Tipo 1,458,Lanche da Tarde
+Tofu,Doenças Cardíacas,344,Almoço
+Batata Doce,Colesterol Alto,91,Jantar
+Tofu,Hipertensão,273,Jantar
+Queijo Cottage,Colesterol Alto,234,Café da Manhã
+Batata Doce,Doença Celíaca,125,Café da Manhã
+Aveia,Hipertensão,109,Lanche da Tarde
+Tomate,Obesidade,341,Almoço
+Aveia,Diabetes Tipo 1,381,Almoço
+Aveia,Osteoporose,291,Almoço
+Abacate,Diabetes Tipo 1,97,Lanche da Tarde
+Tomate,Nenhuma,483,Jantar
+Pimentão,Colesterol Alto,291,Lanche da Tarde
+Ervilhas,Hipertensão,420,Café da Manhã
+Aveia,Diabetes Tipo 1,289,Jantar
+Batata Doce,Doença Celíaca,420,Almoço
+Pimentão,Obesidade,415,Café da Manhã
+Abacate,Doença Celíaca,335,Café da Manhã
+Grão-de-Bico,Osteoporose,356,Almoço
+Ovos,Diabetes Tipo 1,171,Jantar
+Ervilhas,Osteoporose,444,Jantar
+Ervilhas,Doença Celíaca,92,Lanche da Tarde
+Banana,Diabetes Tipo 2,76,Lanche da Tarde
+Brócolis,Doenças Cardíacas,253,Almoço
+Morango,Hipertensão,235,Café da Manhã
+Pão Integral,Obesidade,155,Almoço
+Blueberry,Diabetes Tipo 2,431,Café da Manhã
+Salmão,Diabetes Tipo 1,422,Almoço
+Ervilhas,Doença Celíaca,274,Almoço
+Blueberry,Nenhuma,269,Almoço
+Espinafre,Osteoporose,313,Almoço
+Tilápia,Diabetes Tipo 2,489,Lanche da Tarde
+Carne Magra,Diabetes Tipo 1,262,Almoço
+Blueberry,Obesidade,451,Café da Manhã
+Aveia,Colesterol Alto,124,Café da Manhã
+Pepino,Insuficiência Renal,248,Café da Manhã
+Queijo Cottage,Doenças Cardíacas,106,Almoço
+Salmão,Hipertensão,462,Lanche da Tarde
+Abacate,Hipertensão,305,Jantar
+Queijo Cottage,Diabetes Tipo 1,194,Jantar
+Semente de Linhaça,Doenças Cardíacas,111,Café da Manhã
+Chia,Doença Celíaca,374,Lanche da Tarde
+Aveia,Nenhuma,247,Jantar
+Maçã,Colesterol Alto,222,Café da Manhã
+Aveia,Diabetes Tipo 2,360,Lanche da Tarde
+Pimentão,Insuficiência Renal,466,Café da Manhã
+Batata Doce,Obesidade,160,Lanche da Tarde
+Ovos,Diabetes Tipo 1,254,Almoço
+Iogurte Natural,Diabetes Tipo 1,489,Lanche da Tarde
+Iogurte Natural,Obesidade,499,Café da Manhã
+Laranja,Osteoporose,289,Café da Manhã
+Peito de Frango,Doenças Cardíacas,318,Almoço
+Cenoura,Osteoporose,459,Café da Manhã
+Quinoa,Doença Celíaca,114,Jantar
+Peito de Frango,Nenhuma,375,Jantar
+Quinoa,Osteoporose,126,Jantar
+Cenoura,Diabetes Tipo 1,464,Lanche da Tarde
+Tofu,Nenhuma,218,Almoço
+Grão-de-Bico,Obesidade,451,Jantar
+Aveia,Doença Celíaca,462,Jantar
+Maçã,Diabetes Tipo 2,334,Café da Manhã
+Tilápia,Doenças Cardíacas,61,Café da Manhã
+Maçã,Obesidade,143,Jantar
+Cenoura,Osteoporose,115,Lanche da Tarde
+Tilápia,Diabetes Tipo 2,154,Lanche da Tarde
+Semente de Linhaça,Colesterol Alto,434,Lanche da Tarde
+Grão-de-Bico,Nenhuma,158,Lanche da Tarde
+Couve,Osteoporose,228,Jantar
+Queijo Cottage,Diabetes Tipo 2,300,Café da Manhã
+Tofu,Doenças Cardíacas,461,Jantar
+Pimentão,Doenças Cardíacas,234,Lanche da Tarde
+Cenoura,Doença Celíaca,129,Almoço
+Abobrinha,Hipertensão,413,Almoço
+Lentilhas,Diabetes Tipo 2,230,Jantar
+Banana,Doença Celíaca,322,Jantar
+Lentilhas,Obesidade,396,Café da Manhã
+Peras,Insuficiência Renal,127,Lanche da Tarde
+Cenoura,Nenhuma,75,Jantar
+Peras,Insuficiência Renal,457,Café da Manhã
+Castanha de Caju,Diabetes Tipo 1,366,Café da Manhã
+Laranja,Doenças Cardíacas,453,Jantar
+Iogurte Natural,Osteoporose,115,Almoço
+Brócolis,Insuficiência Renal,157,Lanche da Tarde
+Pão Integral,Osteoporose,496,Jantar
+Espinafre,Obesidade,218,Café da Manhã
+Salmão,Nenhuma,374,Jantar
+Arroz Integral,Osteoporose,193,Almoço
+Arroz Integral,Hipertensão,71,Almoço
+Arroz Integral,Insuficiência Renal,325,Café da Manhã
+Pimentão,Osteoporose,206,Lanche da Tarde
+Pepino,Colesterol Alto,275,Jantar
+Laranja,Colesterol Alto,188,Jantar
+Peito de Frango,Doença Celíaca,74,Lanche da Tarde
+Tilápia,Doenças Cardíacas,203,Café da Manhã
+Pimentão,Nenhuma,231,Almoço
+Couve,Hipertensão,57,Lanche da Tarde
+Tilápia,Diabetes Tipo 1,454,Café da Manhã
+Semente de Linhaça,Diabetes Tipo 2,405,Lanche da Tarde
+Cenoura,Diabetes Tipo 2,265,Café da Manhã
+Iogurte Natural,Colesterol Alto,240,Lanche da Tarde
+Arroz Integral,Colesterol Alto,496,Jantar
+Blueberry,Colesterol Alto,193,Almoço
+Aveia,Hipertensão,182,Café da Manhã
+Iogurte Natural,Hipertensão,413,Café da Manhã
+Lentilhas,Diabetes Tipo 1,150,Café da Manhã
+Aveia,Diabetes Tipo 1,272,Jantar
+Couve,Obesidade,146,Café da Manhã
+Queijo Cottage,Osteoporose,409,Jantar
+Tilápia,Osteoporose,135,Jantar
+Aveia,Doenças Cardíacas,165,Jantar
+Iogurte Natural,Diabetes Tipo 1,435,Lanche da Tarde
+Lentilhas,Nenhuma,228,Café da Manhã
+Chia,Obesidade,73,Almoço
+Lentilhas,Insuficiência Renal,114,Jantar
+Ervilhas,Doença Celíaca,320,Lanche da Tarde
+Iogurte Natural,Diabetes Tipo 1,255,Lanche da Tarde
+Peito de Frango,Diabetes Tipo 2,343,Jantar
+Tofu,Obesidade,102,Café da Manhã
+Pão Integral,Doença Celíaca,404,Jantar
+Feijão Preto,Doenças Cardíacas,254,Almoço
+Pimentão,Obesidade,436,Almoço
+Tilápia,Nenhuma,164,Lanche da Tarde
+Semente de Linhaça,Osteoporose,403,Jantar
+Semente de Linhaça,Diabetes Tipo 1,256,Café da Manhã
+Tilápia,Insuficiência Renal,451,Jantar
+Arroz Integral,Insuficiência Renal,350,Lanche da Tarde
+Iogurte Natural,Hipertensão,249,Jantar
+Ervilhas,Hipertensão,77,Café da Manhã
+Quinoa,Doenças Cardíacas,457,Jantar
+Abobrinha,Hipertensão,149,Almoço
+Iogurte Natural,Osteoporose,289,Jantar
+Espinafre,Insuficiência Renal,115,Café da Manhã
+Aveia,Diabetes Tipo 1,121,Café da Manhã
+Feijão Preto,Insuficiência Renal,107,Café da Manhã
+Salmão,Osteoporose,381,Jantar
+Tofu,Diabetes Tipo 2,235,Jantar
+Peras,Colesterol Alto,281,Lanche da Tarde
+Iogurte Natural,Diabetes Tipo 2,316,Lanche da Tarde
+Acelga,Nenhuma,58,Lanche da Tarde
+Abacate,Colesterol Alto,320,Jantar
+Pão Integral,Diabetes Tipo 2,145,Lanche da Tarde
+Pão Integral,Colesterol Alto,332,Lanche da Tarde
+Tilápia,Nenhuma,357,Almoço
+Semente de Linhaça,Doença Celíaca,475,Jantar
+Tomate,Obesidade,91,Almoço
+Chia,Osteoporose,297,Café da Manhã
+Chia,Doenças Cardíacas,303,Almoço
+Brócolis,Osteoporose,351,Jantar
+Batata Inglesa,Insuficiência Renal,401,Jantar
+Tofu,Nenhuma,204,Lanche da Tarde
+Cenoura,Obesidade,295,Café da Manhã
+Batata Doce,Nenhuma,151,Almoço
+Acelga,Diabetes Tipo 2,305,Jantar
+Brócolis,Nenhuma,127,Jantar
+Carne Magra,Osteoporose,315,Café da Manhã
+Batata Doce,Nenhuma,327,Lanche da Tarde
+Aveia,Colesterol Alto,52,Lanche da Tarde
+Batata Doce,Nenhuma,289,Almoço
+Arroz Integral,Diabetes Tipo 2,466,Lanche da Tarde
+Pimentão,Diabetes Tipo 1,118,Café da Manhã
+Peito de Frango,Osteoporose,174,Café da Manhã
+Ervilhas,Doença Celíaca,474,Jantar
+Carne Magra,Doença Celíaca,312,Café da Manhã
+Abobrinha,Diabetes Tipo 1,243,Almoço
+Arroz Integral,Obesidade,359,Jantar
+Banana,Insuficiência Renal,424,Café da Manhã
+Laranja,Nenhuma,409,Jantar
+Ovos,Hipertensão,102,Café da Manhã
+Laranja,Doenças Cardíacas,112,Lanche da Tarde
+Iogurte Natural,Hipertensão,284,Almoço
+Batata Inglesa,Doenças Cardíacas,369,Almoço
+Espinafre,Diabetes Tipo 2,425,Almoço
+Abacate,Osteoporose,254,Almoço
+Couve,Diabetes Tipo 1,364,Lanche da Tarde
+Quinoa,Nenhuma,479,Jantar
+Batata Doce,Doença Celíaca,392,Almoço
+Tilápia,Doenças Cardíacas,126,Almoço
+Peito de Frango,Osteoporose,322,Café da Manhã
+Quinoa,Diabetes Tipo 1,373,Jantar
+Lentilhas,Insuficiência Renal,264,Almoço
+Feijão Preto,Colesterol Alto,305,Almoço
+Morango,Nenhuma,330,Jantar
+Semente de Linhaça,Obesidade,183,Jantar
+Salmão,Nenhuma,262,Lanche da Tarde
+Brócolis,Colesterol Alto,303,Almoço
+Banana,Diabetes Tipo 1,316,Jantar
+Iogurte Natural,Doenças Cardíacas,154,Jantar
+Morango,Doença Celíaca,238,Almoço
+Salmão,Doença Celíaca,395,Jantar
+Couve,Colesterol Alto,76,Lanche da Tarde
+Amêndoas,Insuficiência Renal,203,Lanche da Tarde
+Acelga,Doenças Cardíacas,272,Almoço
+Peito de Frango,Diabetes Tipo 1,331,Jantar
+Amêndoas,Nenhuma,119,Lanche da Tarde
+Pepino,Hipertensão,333,Almoço
+Maçã,Doenças Cardíacas,242,Jantar
+Banana,Doenças Cardíacas,339,Jantar
+Abacate,Osteoporose,308,Café da Manhã
+Castanha de Caju,Doença Celíaca,256,Lanche da Tarde
+Chia,Hipertensão,495,Jantar
+Queijo Cottage,Hipertensão,345,Jantar
+Quinoa,Osteoporose,457,Lanche da Tarde
+Castanha de Caju,Diabetes Tipo 2,486,Lanche da Tarde
+Aveia,Nenhuma,247,Almoço
+Cenoura,Diabetes Tipo 2,84,Café da Manhã
+Peito de Frango,Colesterol Alto,436,Café da Manhã
+Chia,Doenças Cardíacas,406,Almoço
+Semente de Linhaça,Diabetes Tipo 2,256,Jantar
+Castanha de Caju,Obesidade,333,Jantar
+Cenoura,Osteoporose,205,Lanche da Tarde
+Peras,Obesidade,242,Café da Manhã
+Batata Inglesa,Obesidade,391,Jantar
+Aveia,Hipertensão,298,Café da Manhã
+Carne Magra,Osteoporose,279,Jantar
+Castanha de Caju,Hipertensão,323,Almoço
+Batata Doce,Hipertensão,378,Lanche da Tarde
+Chia,Insuficiência Renal,186,Lanche da Tarde
+Cenoura,Diabetes Tipo 2,351,Café da Manhã
+Pão Integral,Hipertensão,319,Jantar
+Tofu,Nenhuma,70,Lanche da Tarde
+Carne Magra,Doença Celíaca,162,Jantar
+Arroz Integral,Hipertensão,455,Jantar
+Semente de Linhaça,Doenças Cardíacas,393,Almoço
+Salmão,Obesidade,179,Jantar
+Batata Doce,Insuficiência Renal,472,Almoço
+Chia,Osteoporose,288,Jantar
+Iogurte Natural,Doença Celíaca,362,Café da Manhã
+Pimentão,Hipertensão,125,Almoço
+Tilápia,Diabetes Tipo 2,202,Café da Manhã
+Abacate,Insuficiência Renal,399,Jantar
+Tilápia,Hipertensão,465,Lanche da Tarde
+Carne Magra,Doença Celíaca,199,Café da Manhã
+Morango,Diabetes Tipo 2,270,Almoço
+Brócolis,Obesidade,254,Jantar
+Maçã,Diabetes Tipo 2,270,Café da Manhã
+Abobrinha,Diabetes Tipo 1,371,Lanche da Tarde
+Tomate,Colesterol Alto,145,Almoço
+Batata Doce,Osteoporose,488,Lanche da Tarde
+Abobrinha,Doença Celíaca,188,Jantar
+Aveia,Doenças Cardíacas,270,Café da Manhã
+Tofu,Osteoporose,98,Café da Manhã
+Pimentão,Insuficiência Renal,412,Almoço
+Peito de Frango,Diabetes Tipo 2,327,Lanche da Tarde
+Ovos,Hipertensão,253,Jantar
+Chia,Colesterol Alto,182,Lanche da Tarde
+Batata Inglesa,Nenhuma,173,Café da Manhã
+Salmão,Doenças Cardíacas,158,Almoço
+Aveia,Diabetes Tipo 2,256,Lanche da Tarde
+Iogurte Natural,Insuficiência Renal,487,Café da Manhã
+Cenoura,Doença Celíaca,233,Café da Manhã
+Batata Inglesa,Diabetes Tipo 1,476,Café da Manhã
+Batata Inglesa,Diabetes Tipo 1,298,Lanche da Tarde
+Abacate,Nenhuma,145,Lanche da Tarde
+Chia,Doença Celíaca,93,Café da Manhã
+Espinafre,Insuficiência Renal,378,Café da Manhã
+Abobrinha,Osteoporose,301,Jantar
+Pão Integral,Osteoporose,456,Lanche da Tarde
+Lentilhas,Obesidade,89,Almoço
+Castanha de Caju,Insuficiência Renal,474,Almoço
+Acelga,Doença Celíaca,84,Lanche da Tarde
+Abobrinha,Diabetes Tipo 1,341,Lanche da Tarde
+Iogurte Natural,Obesidade,486,Café da Manhã
+Iogurte Natural,Nenhuma,273,Almoço
+Couve,Insuficiência Renal,304,Jantar
+Pepino,Insuficiência Renal,237,Jantar
+Iogurte Natural,Diabetes Tipo 1,470,Café da Manhã
+Grão-de-Bico,Osteoporose,99,Lanche da Tarde
+Ovos,Nenhuma,68,Café da Manhã
+Carne Magra,Doenças Cardíacas,487,Almoço
+Brócolis,Doenças Cardíacas,447,Café da Manhã
+Pimentão,Nenhuma,360,Café da Manhã
+Arroz Integral,Diabetes Tipo 2,296,Café da Manhã
+Cenoura,Diabetes Tipo 2,241,Lanche da Tarde
+Carne Magra,Doenças Cardíacas,235,Almoço
+Aveia,Diabetes Tipo 1,97,Jantar
+Tofu,Nenhuma,445,Almoço
+Pimentão,Doenças Cardíacas,285,Café da Manhã
+Tofu,Osteoporose,292,Almoço
+Pepino,Doença Celíaca,242,Lanche da Tarde
+Amêndoas,Diabetes Tipo 1,432,Jantar
+Banana,Obesidade,172,Jantar
+Semente de Linhaça,Colesterol Alto,219,Jantar
+Espinafre,Doença Celíaca,195,Café da Manhã
+Aveia,Colesterol Alto,195,Lanche da Tarde
+Ovos,Colesterol Alto,303,Café da Manhã
+Semente de Linhaça,Colesterol Alto,467,Café da Manhã
+Salmão,Doenças Cardíacas,90,Lanche da Tarde
+Maçã,Osteoporose,277,Café da Manhã
+Batata Doce,Doenças Cardíacas,469,Jantar
+Aveia,Diabetes Tipo 2,340,Jantar
+Aveia,Nenhuma,397,Lanche da Tarde
+Couve,Doença Celíaca,165,Jantar
+Queijo Cottage,Insuficiência Renal,82,Café da Manhã
