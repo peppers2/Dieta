@@ -1,3 +1,4 @@
+# app.py
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -39,8 +40,9 @@ doencas_opcoes = [
 ]
 
 # Função para sugerir refeições sem ultrapassar a TMB e respeitando restrições
-def sugerir_refeicoes(tmb, doencas):
-    df_permitidos = df_alimentos[~df_alimentos["Doencas_Restritivas"].isin(doencas)]
+def sugerir_refeicoes_ajustado(tmb, previsoes_doencas):
+    doencas_preditas = [disease for disease, risk in previsoes_doencas.items() if risk == 1]
+    df_permitidos = df_alimentos[~df_alimentos["Doencas_Restritivas"].isin(doencas_preditas)]
     refeicoes = {}
     calorias_refeicao = tmb / 4 if tmb > 0 else 0
     
@@ -50,22 +52,22 @@ def sugerir_refeicoes(tmb, doencas):
     
     return refeicoes
 
-# Função para treinar o modelo e prever doenças
-def treinar_modelo(df):
-    X = df.drop(columns=[col for col in df.columns if "Doença" in col])
-    y = df[[col for col in df.columns if "Doença" in col]]
+# Função para treinar o modelo de risco de doença com base nos dados do paciente
+def treinar_modelo_risco(df_pacientes):
+    y_columns = [col for col in df_pacientes.columns if "Doença" in col]
+    X = df_pacientes.drop(columns=y_columns)
+    y = df_pacientes[y_columns]
     
     modelos = {}
     metricas = {}
     previsoes = {}
-
+    
     for disease in y.columns:
         X_train, X_test, y_train, y_test = train_test_split(X, y[disease], test_size=0.3, random_state=42)
         model = RandomForestClassifier(random_state=42)
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
-
-        # Salvando o modelo e as métricas
+        
         modelos[disease] = model
         metricas[disease] = {
             "Acurácia": accuracy_score(y_test, y_pred),
@@ -73,8 +75,6 @@ def treinar_modelo(df):
             "Precisão": precision_score(y_test, y_pred),
             "Recall": recall_score(y_test, y_pred)
         }
-        
-        # Previsão (exemplo para um novo paciente)
         previsoes[disease] = model.predict(X_test[:1])  # Exemplo com um paciente de teste
     
     return modelos, metricas, previsoes
@@ -82,8 +82,7 @@ def treinar_modelo(df):
 # Configuração de navegação no Streamlit
 st.title("Sistema de Recomendação Alimentar para Idosos")
 st.sidebar.title("Navegação")
-
-menu = st.sidebar.radio("Menu", ["Coleta de Dados","Resumo de Pacientes","Resumo de Alimentos", "Anamnese", "Recomendações", "Análise Gráfica", "Modelo de Machine Learning"])
+menu = st.sidebar.radio("Menu", ["Coleta de Dados","Resumo de Pacientes", "Resumo de Alimentos", "Anamnese", "Recomendações","Modelo de Machine Learning", "Resumo de Dados"])
 
 # Inicializando variáveis no session_state para garantir que os dados persistam
 if 'dados_paciente' not in st.session_state:
@@ -91,20 +90,32 @@ if 'dados_paciente' not in st.session_state:
         'nome': '', 'idade': 0, 'genero': '', 'peso': 0.0, 'altura': 0.0,
         'atividade_fisica': '', 'imc': 0.0, 'tmb': 0.0, 'doencas': []
     }
-if 'calorias_refeicoes' not in st.session_state:
-    st.session_state['calorias_refeicoes'] = {}
 
-# Página 1: Coleta de Dados e Cálculo de IMC e TMB
+# Página de Coleta de Dados
+# Página de Coleta de Dados
 if menu == "Coleta de Dados":
     st.header("Informações do Paciente")
-    st.session_state['dados_paciente']['nome'] = st.text_input("Nome", value=st.session_state['dados_paciente']['nome'])
-    st.session_state['dados_paciente']['idade'] = st.number_input("Idade", min_value=0, value=st.session_state['dados_paciente']['idade'])
-    st.session_state['dados_paciente']['genero'] = st.selectbox("Gênero", ["", "Masculino", "Feminino"], index=0 if st.session_state['dados_paciente']['genero'] == "" else ["", "Masculino", "Feminino"].index(st.session_state['dados_paciente']['genero']))
-    st.session_state['dados_paciente']['peso'] = st.number_input("Peso (kg)", min_value=0.0, max_value=200.0, value=st.session_state['dados_paciente']['peso'])
-    st.session_state['dados_paciente']['altura'] = st.number_input("Altura (cm)", min_value=0.0, max_value=250.0, value=st.session_state['dados_paciente']['altura'])
-    st.session_state['dados_paciente']['atividade_fisica'] = st.selectbox("Nível de Atividade Física", ["", "Sedentário", "Leve", "Moderado", "Intenso"], index=0 if st.session_state['dados_paciente']['atividade_fisica'] == "" else ["", "Sedentário", "Leve", "Moderado", "Intenso"].index(st.session_state['dados_paciente']['atividade_fisica']))
-
-    # Cálculo do IMC e TMB
+    
+    # Coleta e atualização de cada campo no session_state
+    nome = st.text_input("Nome", value=st.session_state['dados_paciente'].get('nome', ''))
+    st.session_state['dados_paciente']['nome'] = nome
+    
+    idade = st.number_input("Idade", min_value=0, value=st.session_state['dados_paciente'].get('idade', 0))
+    st.session_state['dados_paciente']['idade'] = idade
+    
+    genero = st.selectbox("Gênero", ["", "Masculino", "Feminino"], index=["", "Masculino", "Feminino"].index(st.session_state['dados_paciente'].get('genero', '')))
+    st.session_state['dados_paciente']['genero'] = genero
+    
+    peso = st.number_input("Peso (kg)", min_value=0.0, max_value=200.0, value=st.session_state['dados_paciente'].get('peso', 0.0))
+    st.session_state['dados_paciente']['peso'] = peso
+    
+    altura = st.number_input("Altura (cm)", min_value=0.0, max_value=250.0, value=st.session_state['dados_paciente'].get('altura', 0.0))
+    st.session_state['dados_paciente']['altura'] = altura
+    
+    atividade_fisica = st.selectbox("Nível de Atividade Física", ["", "Sedentário", "Leve", "Moderado", "Intenso"], index=["", "Sedentário", "Leve", "Moderado", "Intenso"].index(st.session_state['dados_paciente'].get('atividade_fisica', '')))
+    st.session_state['dados_paciente']['atividade_fisica'] = atividade_fisica
+    
+    # Cálculo de IMC e TMB, atualizando o session_state com os valores calculados
     if st.session_state['dados_paciente']['peso'] > 0 and st.session_state['dados_paciente']['altura'] > 0 and st.session_state['dados_paciente']['idade'] > 0:
         st.session_state['dados_paciente']['imc'] = calcular_imc(st.session_state['dados_paciente']['peso'], st.session_state['dados_paciente']['altura'])
         st.write(f"IMC Calculado: {st.session_state['dados_paciente']['imc']:.2f}")
@@ -118,105 +129,301 @@ if menu == "Coleta de Dados":
                 st.session_state['dados_paciente']['atividade_fisica']
             )
             st.write(f"Taxa Metabólica Basal (TMB): {st.session_state['dados_paciente']['tmb']:.2f} kcal")
-        else:
-            st.write("Preencha o gênero e o nível de atividade física para calcular a TMB.")
 
 
-            # Página 2: Anamnese Detalhada
+# Página de Anamnese
+# Página de Anamnese
 elif menu == "Anamnese":
     st.header("Ficha de Anamnese Detalhada")
     st.write("Selecione as doenças pré-existentes do paciente:")
 
-    # Coleta das doenças pré-existentes
-    st.session_state['dados_paciente']['doencas'] = {doenca: st.checkbox(doenca, value=doenca in st.session_state['dados_paciente']['doencas']) for doenca in doencas_opcoes}
-    
-    # Converter para uma lista de doenças selecionadas
-    doencas_selecionadas = [doenca for doenca, selecionado in st.session_state['dados_paciente']['doencas'].items() if selecionado]
+    # Inicializar a lista de doenças no session_state se ainda não existir
+    if 'doencas' not in st.session_state['dados_paciente']:
+        st.session_state['dados_paciente']['doencas'] = []
+
+    # Atualizar a lista de doenças com base nas seleções
+    doencas_selecionadas = []
+    for doenca in doencas_opcoes:
+        # Checkbox com valor padrão baseado no estado atual do session_state
+        is_checked = doenca in st.session_state['dados_paciente']['doencas']
+        if st.checkbox(doenca, value=is_checked):
+            doencas_selecionadas.append(doenca)
+
+    # Salva a lista atualizada no session_state
     st.session_state['dados_paciente']['doencas'] = doencas_selecionadas
-    st.write("Doenças selecionadas:", doencas_selecionadas)
+    
+    # Exibir as doenças selecionadas
+    st.write("Doenças selecionadas:", st.session_state['dados_paciente']['doencas'])
 
-    st.write("Informações salvas! Você pode continuar para a seção de recomendações.")
 
-# Página 3: Recomendação de Refeições
+# Página de Recomendação de Refeições
+# Página de Recomendações
+# Página de Recomendações
+# Página de Recomendações
 elif menu == "Recomendações":
     st.header("Recomendações de Refeições")
-    
-    # Geração das recomendações de refeições com base na TMB e nas doenças selecionadas
-    if st.session_state['dados_paciente']['tmb'] > 0 and st.session_state['dados_paciente']['doencas']:
-        recomendacoes = sugerir_refeicoes(st.session_state['dados_paciente']['tmb'], st.session_state['dados_paciente']['doencas'])
-        total_calorias_consumido = 0  
+
+    # Verifica se a TMB foi calculada
+    tmb = st.session_state['dados_paciente'].get('tmb', 0)
+    if tmb <= 0:
+        st.write("Por favor, insira os dados do paciente na página 'Coleta de Dados' para calcular a TMB.")
+    else:
+        modelos, metricas, previsoes = treinar_modelo_risco(df_pacientes)
         
-        st.write("Com base nas informações fornecidas, aqui estão as recomendações de refeições:")
-        calorias_refeicoes = {}
+        # Sugerir refeições com base na TMB e nas restrições
+        recomendacoes = sugerir_refeicoes_ajustado(tmb, previsoes)
         
-        # Exibição das refeições e calorias totais para cada uma
+        # Calorias distribuídas igualmente para cada refeição inicial
+        calorias_por_refeicao = tmb / 4
+        st.write(f"TMB calculada para o dia: {tmb:.2f} kcal")
+        
+        total_calorias_dia = 0  # Variável para armazenar o total de calorias para o dia
+        refeicoes_ajustadas = {}
+
         for refeicao, alimentos in recomendacoes.items():
+            total_calorias_refeicao = alimentos['Calorias'].sum()
+
+            # Ajuste de calorias para não ultrapassar a TMB por refeição
+            if total_calorias_refeicao > calorias_por_refeicao:
+                # Selecionar alimentos de menor caloria até atingir o limite da refeição
+                alimentos = alimentos.sort_values(by='Calorias', ascending=True)
+                calorias_cumulativas = alimentos['Calorias'].cumsum()
+                alimentos = alimentos[calorias_cumulativas <= calorias_por_refeicao * 1.05]  # Ligeiramente maior para ajustar
+            
+            total_calorias_refeicao = alimentos['Calorias'].sum()
+            total_calorias_dia += total_calorias_refeicao  # Adiciona ao total diário
+            refeicoes_ajustadas[refeicao] = alimentos  # Salva a refeição ajustada
+
+        # Ajuste final se total_calorias_dia for ligeiramente menor que TMB
+        if total_calorias_dia < tmb:
+            ajuste_fator = tmb / total_calorias_dia
+            total_calorias_dia = 0  # Redefine o total para recalcular
+
+            # Aplicar o fator de ajuste em cada refeição para que o total corresponda ou seja ligeiramente superior à TMB
+            for refeicao, alimentos in refeicoes_ajustadas.items():
+                alimentos['Calorias'] = alimentos['Calorias'] * ajuste_fator
+                total_calorias_refeicao = alimentos['Calorias'].sum()
+                total_calorias_dia += total_calorias_refeicao
+                refeicoes_ajustadas[refeicao] = alimentos
+
+        # Exibição das refeições ajustadas e total de calorias
+        for refeicao, alimentos in refeicoes_ajustadas.items():
             st.subheader(refeicao)
-            calorias_refeicao = alimentos["Calorias"].sum()
-            calorias_refeicoes[refeicao] = calorias_refeicao
-            total_calorias_consumido += calorias_refeicao
+            total_calorias_refeicao = alimentos['Calorias'].sum()
+
+            # Exibe os alimentos da refeição e suas calorias ajustadas
             for _, row in alimentos.iterrows():
-                st.write(f"- {row['Alimento']}: {row['Calorias']} kcal")
-            st.write(f"**Total de Calorias para {refeicao}: {calorias_refeicao} kcal**")
+                st.write(f"- {row['Alimento']}: {row['Calorias']:.2f} kcal")
+            
+            # Exibe o total de calorias para a refeição atual
+            st.write(f"**Total de calorias para {refeicao}: {total_calorias_refeicao:.2f} kcal**")
         
-        st.session_state['calorias_refeicoes'] = calorias_refeicoes
-        st.write(f"**Total de Calorias Consumidas no Dia:** {total_calorias_consumido} kcal")
-        st.write(f"**Total de Calorias Proposto para o Dia (TMB):** {st.session_state['dados_paciente']['tmb']:.2f} kcal")
-
-# Página 4: Análise Gráfica
-elif menu == "Análise Gráfica":
-    st.header("Análise Gráfica")
-
-    if st.session_state['dados_paciente']['tmb'] > 0 and st.session_state['calorias_refeicoes']:
-        # Gráfico de barras das calorias por refeição com rótulos de dados
-        fig_calorias_refeicoes = go.Figure(data=[
-            go.Bar(
-                name="Calorias", 
-                x=list(st.session_state['calorias_refeicoes'].keys()), 
-                y=list(st.session_state['calorias_refeicoes'].values()), 
-                text=list(st.session_state['calorias_refeicoes'].values()), 
-                textposition='auto'
-            )
-        ])
-        fig_calorias_refeicoes.update_layout(title="Calorias Consumidas por Refeição")
-        st.plotly_chart(fig_calorias_refeicoes)
+        # Exibe o total de calorias sugerido para o dia
+        st.write(f"### Total de calorias sugerido para o dia: {total_calorias_dia:.2f} kcal")
         
-        # Gráfico de indicador de IMC
-        fig_imc = go.Figure(go.Indicator(
-            mode="gauge+number",
-            value=st.session_state['dados_paciente']['imc'],
-            title={'text': "IMC"},
-            gauge={'axis': {'range': [10, 40]}, 'bar': {'color': "darkblue"}},
-            number={'suffix': " kg/m²"}
-        ))
-        st.plotly_chart(fig_imc)
+        if total_calorias_dia > tmb:
+            st.info(f"O total de calorias ({total_calorias_dia:.2f} kcal) está ligeiramente acima da TMB ({tmb:.2f} kcal) para atender aos requisitos nutricionais.")
 
-        # Gráfico de pizza com rótulos de calorias
-        fig_pizza_calorias = go.Figure(data=[
-            go.Pie(
-                labels=list(st.session_state['calorias_refeicoes'].keys()), 
-                values=list(st.session_state['calorias_refeicoes'].values()),
-                textinfo='label+percent',  # Exibe o rótulo e a porcentagem
-                insidetextorientation='radial'
+
+
+
+
+
+
+
+
+# Página de Resumo de Dados
+elif menu == "Resumo de Dados":
+    st.header("Resumo de Dados")
+    
+    # Resumo de df_pacientes
+    st.subheader("Resumo do DataFrame de Pacientes")
+    st.write("Número de pacientes:", df_pacientes.shape[0])
+    st.write(df_pacientes.describe())
+    st.write("Amostra de dados de pacientes:")
+    st.write(df_pacientes.head())
+    
+    # Resumo de df_alimentos
+    st.subheader("Resumo do DataFrame de Alimentos")
+    st.write("Número de alimentos:", df_alimentos.shape[0])
+    st.write(df_alimentos.describe())
+    st.write("Amostra de dados de alimentos:")
+    st.write(df_alimentos)
+
+# Página de Resumo de Pacientes com Gráficos
+elif menu == "Resumo de Pacientes":
+    st.header("Resumo dos Pacientes")
+    
+    # Gráfico de distribuição de idade
+    fig_idade = go.Figure(data=[
+        go.Histogram(
+            x=df_pacientes['Idade'],
+            nbinsx=20,
+            marker=dict(
+                color='rgba(0, 128, 255, 0.7)',
+                line=dict(width=1, color='rgba(0, 128, 255, 1)')
+            ),
+            opacity=0.75
+        )
+    ])
+    fig_idade.update_layout(
+        title="Distribuição de Idade dos Pacientes",
+        xaxis_title="Idade",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_idade)
+
+    # Gráfico de distribuição de IMC
+    fig_imc = go.Figure(data=[
+        go.Histogram(
+            x=df_pacientes['IMC'],
+            nbinsx=20,
+            marker=dict(
+                color='rgba(255, 0, 127, 0.7)',
+                line=dict(width=1, color='rgba(255, 0, 127, 1)')
+            ),
+            opacity=0.75
+        )
+    ])
+    fig_imc.update_layout(
+        title="Distribuição de IMC dos Pacientes",
+        xaxis_title="IMC",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_imc)
+
+    # Gráfico de distribuição de Peso
+    fig_peso = go.Figure(data=[
+        go.Histogram(
+            x=df_pacientes['Peso (kg)'],
+            nbinsx=20,
+            marker=dict(
+                color='rgba(0, 255, 127, 0.7)',
+                line=dict(width=1, color='rgba(0, 255, 127, 1)')
+            ),
+            opacity=0.75
+        )
+    ])
+    fig_peso.update_layout(
+        title="Distribuição de Peso dos Pacientes",
+        xaxis_title="Peso (kg)",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_peso)
+
+    # Gráfico de doenças mais comuns
+    doencas_columns = [col for col in df_pacientes.columns if "Doença" in col]
+    doencas_counts = df_pacientes[doencas_columns].sum()
+
+    fig_doencas = go.Figure(data=[
+        go.Bar(
+            x=doencas_counts.index,
+            y=doencas_counts.values,
+            text=doencas_counts.values,
+            textposition='auto',
+            marker=dict(
+                color='rgba(255, 165, 0, 0.7)',
+                line=dict(width=1.5, color='rgba(255, 165, 0, 1)')
             )
-        ])
-        fig_pizza_calorias.update_layout(title="Distribuição de Calorias por Refeição")
-        st.plotly_chart(fig_pizza_calorias)
+        )
+    ])
+    fig_doencas.update_layout(
+        title="Frequência de Doenças nos Pacientes",
+        xaxis_title="Doenças",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_doencas)
 
-        # Gráfico de barra das doenças selecionadas com rótulos de dados
-        doencas_selecionadas = st.session_state['dados_paciente']['doencas']
-        fig_doencas = go.Figure(data=[
-            go.Bar(
-                name="Doenças Selecionadas", 
-                x=doencas_opcoes, 
-                y=[1 if d in doencas_selecionadas else 0 for d in doencas_opcoes],
-                text=[1 if d in doencas_selecionadas else 0 for d in doencas_opcoes],
-                textposition='auto'
+# Página de Resumo de Alimentos com Gráficos
+elif menu == "Resumo de Alimentos":
+    st.header("Resumo dos Alimentos")
+
+    # Gráfico de distribuição de Calorias
+    fig_calorias = go.Figure(data=[
+        go.Histogram(
+            x=df_alimentos['Calorias'],
+            nbinsx=20,
+            marker=dict(
+                color='rgba(255, 99, 71, 0.7)',
+                line=dict(width=1, color='rgba(255, 99, 71, 1)')
+            ),
+            opacity=0.75
+        )
+    ])
+    fig_calorias.update_layout(
+        title="Distribuição de Calorias",
+        xaxis_title="Calorias",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_calorias)
+
+    # Gráfico de distribuição de Carboidratos
+    fig_carboidratos = go.Figure(data=[
+        go.Histogram(
+            x=df_alimentos['Calorias'],
+            nbinsx=20,
+            marker=dict(
+                color='rgba(75, 192, 192, 0.7)',
+                line=dict(width=1, color='rgba(75, 192, 192, 1)')
+            ),
+            opacity=0.75
+        )
+    ])
+    fig_carboidratos.update_layout(
+        title="Distribuição de Carboidratos",
+        xaxis_title="Calorias",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_carboidratos)
+
+    # Gráfico de distribuição de Gorduras
+    fig_gorduras = go.Figure(data=[
+        go.Histogram(
+            x=df_alimentos['Calorias'],
+            nbinsx=20,
+            marker=dict(
+                color='rgba(153, 102, 255, 0.7)',
+                line=dict(width=1, color='rgba(153, 102, 255, 1)')
+            ),
+            opacity=0.75
+        )
+    ])
+    fig_gorduras.update_layout(
+        title="Distribuição de Calorias",
+        xaxis_title="Calorias",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_gorduras)
+
+    # Gráfico de categorias de alimentos mais comuns
+    categorias_counts = df_alimentos['Refeicao_Indicada'].value_counts()
+
+    fig_categorias = go.Figure(data=[
+        go.Bar(
+            x=categorias_counts.index,
+            y=categorias_counts.values,
+            text=categorias_counts.values,
+            textposition='auto',
+            marker=dict(
+                color='rgba(255, 206, 86, 0.7)',
+                line=dict(width=1.5, color='rgba(255, 206, 86, 1)')
             )
-        ])
-        fig_doencas.update_layout(title="Distribuição das Doenças Selecionadas")
-        st.plotly_chart(fig_doencas)
-
+        )
+    ])
+    fig_categorias.update_layout(
+        title="Base de Alimentos por Refeição",
+        xaxis_title="Categorias",
+        yaxis_title="Frequência",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig_categorias)
 # Página 5: Modelo de Machine Learning e Resultados
 elif menu == "Modelo de Machine Learning":
     st.header("Modelo de Machine Learning Usado e Resultados")
@@ -273,179 +480,3 @@ elif menu == "Modelo de Machine Learning":
 
     else:
         st.write("**Dados incompletos.** Por favor, revise as informações nas seções de Coleta de Dados e Anamnese para calcular o modelo de machine learning.")
-
-
-elif menu == "Resumo de Pacientes":
-    st.header("Resumo dos Pacientes")
-    
-        # Gráfico de distribuição de idade com gradiente e rótulos
-    fig_idade = go.Figure(data=[
-        go.Histogram(
-            x=df_pacientes['Idade'],
-            nbinsx=20,
-            marker=dict(
-                color='rgba(0, 128, 255, 0.7)',  # Cor inicial
-                line=dict(width=1, color='rgba(0, 128, 255, 1)')
-            ),
-            opacity=0.75
-        )
-    ])
-    fig_idade.update_layout(
-        title="Distribuição de Idade dos Pacientes",
-        xaxis_title="Idade",
-        yaxis_title="Frequência",
-        template="plotly_white"
-    )
-    st.plotly_chart(fig_idade)
-
-    # Gráfico de distribuição de IMC com gradiente e rótulos
-    fig_imc = go.Figure(data=[
-        go.Histogram(
-            x=df_pacientes['IMC'],
-            nbinsx=20,
-            marker=dict(
-                color='rgba(255, 0, 127, 0.7)',  # Cor inicial
-                line=dict(width=1, color='rgba(255, 0, 127, 1)')
-            ),
-            opacity=0.75
-        )
-    ])
-    fig_imc.update_layout(
-        title="Distribuição de IMC dos Pacientes",
-        xaxis_title="IMC",
-        yaxis_title="Frequência",
-        template="plotly_white"
-    )
-    st.plotly_chart(fig_imc)
-
-    # Gráfico de distribuição de Peso com gradiente e rótulos
-    fig_peso = go.Figure(data=[
-        go.Histogram(
-            x=df_pacientes['Peso (kg)'],
-            nbinsx=20,
-            marker=dict(
-                color='rgba(0, 255, 127, 0.7)',  # Cor inicial
-                line=dict(width=1, color='rgba(0, 255, 127, 1)')
-            ),
-            opacity=0.75
-        )
-    ])
-    fig_peso.update_layout(
-        title="Distribuição de Peso dos Pacientes",
-        xaxis_title="Peso (kg)",
-        yaxis_title="Frequência",
-        template="plotly_white"
-    )
-    st.plotly_chart(fig_peso)
-
-    # Gráfico de doenças mais comuns com gradiente e rótulos
-    doencas_columns = [col for col in df_pacientes.columns if "Doença" in col]
-    doencas_counts = df_pacientes[doencas_columns].sum()
-
-    fig_doencas = go.Figure(data=[
-        go.Bar(
-            x=doencas_counts.index,
-            y=doencas_counts.values,
-            text=doencas_counts.values,
-            textposition='auto',
-            marker=dict(
-                color='rgba(255, 165, 0, 0.7)',  # Cor inicial
-                line=dict(width=1.5, color='rgba(255, 165, 0, 1)')
-            )
-        )
-    ])
-    fig_doencas.update_layout(
-        title="Frequência de Doenças nos Pacientes",
-        xaxis_title="Doenças",
-        yaxis_title="Frequência",
-        template="plotly_white"
-    )
-    st.plotly_chart(fig_doencas)
-
-elif menu == "Resumo de Alimentos":
-    st.header("Resumo dos Alimentos")
-
-    
-    # Gráfico de distribuição de Calorias
-    fig_calorias = go.Figure(data=[
-        go.Histogram(
-            x=df_alimentos['Calorias'],
-            nbinsx=20,
-            marker=dict(
-                color='rgba(255, 99, 71, 0.7)',  # Cor inicial
-                line=dict(width=1, color='rgba(255, 99, 71, 1)')
-            ),
-            opacity=0.75
-        )
-    ])
-    fig_calorias.update_layout(
-        title="Distribuição de Calorias",
-        xaxis_title="Calorias",
-        yaxis_title="Frequência",
-        template="plotly_white"
-    )
-    st.plotly_chart(fig_calorias)
-
-   
-    # Gráfico de distribuição de Gorduras
-    fig_carboidratos = go.Figure(data=[
-        go.Histogram(
-            x=df_alimentos['Calorias'],
-            nbinsx=20,
-            marker=dict(
-                color='rgba(75, 192, 192, 0.7)',  # Cor inicial
-                line=dict(width=1, color='rgba(75, 192, 192, 1)')
-            ),
-            opacity=0.75
-        )
-    ])
-    fig_carboidratos.update_layout(
-        title="Distribuição de Calorias",
-        xaxis_title="Calorias (g)",
-        yaxis_title="Frequência",
-        template="plotly_white"
-    )
-    st.plotly_chart(fig_carboidratos)
-
-    # Gráfico de distribuição de Gorduras
-    fig_gorduras = go.Figure(data=[
-        go.Histogram(
-            x=df_alimentos['Doencas_Restritivas'],
-            nbinsx=20,
-            marker=dict(
-                color='rgba(153, 102, 255, 0.7)',  # Cor inicial
-                line=dict(width=1, color='rgba(153, 102, 255, 1)')
-            ),
-            opacity=0.75
-        )
-    ])
-    fig_gorduras.update_layout(
-        title="Doenças Restritivas",
-        xaxis_title="Doenças Restritivas",
-        yaxis_title="Frequência",
-        template="plotly_white"
-    )
-    st.plotly_chart(fig_gorduras)
-
-    # Gráfico de categorias de alimentos mais comuns
-    categorias_counts = df_alimentos['Refeicao_Indicada'].value_counts()
-
-    fig_categorias = go.Figure(data=[
-        go.Bar(
-            x=categorias_counts.index,
-            y=categorias_counts.values,
-            text=categorias_counts.values,
-            textposition='auto',
-            marker=dict(
-                color='rgba(255, 206, 86, 0.7)',  # Cor inicial
-                line=dict(width=1.5, color='rgba(255, 206, 86, 1)')
-            )
-        )
-    ])
-    fig_categorias.update_layout(
-        title="Base de Alimentos por Refeição",
-        xaxis_title="Categorias",
-        yaxis_title="Frequência",
-        template="plotly_white"
-    )
-    st.plotly_chart(fig_categorias)
