@@ -7,67 +7,191 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
+import alimentos
+
 # Configuração da página
-st.set_page_config(page_title="TCC Univesp - Sistema de Recomendação", page_icon="logo.png", layout="wide")
+st.set_page_config(page_title="TCC Univesp - Sistema de Recomendação",
+                   page_icon="logo.png", layout="wide")
+
+# Função para injetar CSS personalizado
+
+
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+
+# Chama a função para injetar CSS
+local_css("style.css")
 
 # Funções para cálculo de IMC e TMB
+
+
 def calcular_imc(peso, altura):
     return peso / ((altura / 100) ** 2) if altura > 0 else 0
+
 
 def calcular_tmb(peso, altura, idade, genero, atividade_fisica):
     if genero == "Masculino":
         tmb = 88.36 + (13.4 * peso) + (4.8 * altura) - (5.7 * idade)
     else:
         tmb = 447.6 + (9.2 * peso) + (3.1 * altura) - (4.3 * idade)
-    
-    fator_atividade = {"Sedentário": 1.2, "Leve": 1.375, "Moderado": 1.55, "Intenso": 1.725}
+
+    fator_atividade = {"Sedentário": 1.2, "Leve": 1.375,
+                       "Moderado": 1.55, "Intenso": 1.725}
     return tmb * fator_atividade.get(atividade_fisica, 1)
 
+
 # Carregar dados de alimentos e pacientes
-df_alimentos = pd.read_csv("base_alimentos_2000.csv")
-df_pacientes = pd.read_csv("pacientes_base_treinamento_1000_formatado_brasil.csv", delimiter=";")
+
+df_alimentos = pd.read_csv("data/alimentos.csv")
+df_pacientes = pd.read_csv(
+    "pacientes_base_treinamento_1000_formatado_brasil.csv", delimiter=";")
 
 # Ajustar dados de pacientes (caso necessário)
-df_pacientes["Peso (kg)"] = df_pacientes["Peso (kg)"].str.replace(",", ".").astype(float)
-df_pacientes["Altura (cm)"] = df_pacientes["Altura (cm)"].str.replace(",", ".").astype(float)
+df_pacientes["Peso (kg)"] = df_pacientes["Peso (kg)"].str.replace(
+    ",", ".").astype(float)
+df_pacientes["Altura (cm)"] = df_pacientes["Altura (cm)"].str.replace(
+    ",", ".").astype(float)
 df_pacientes["IMC"] = df_pacientes["IMC"].str.replace(",", ".").astype(float)
 
 # Doenças para anamnese
 doencas_opcoes = [
-    "Diabetes Tipo 1", "Diabetes Tipo 2", "Hipertensão", "Obesidade", 
-    "Insuficiência Renal", "Colesterol Alto", "Doenças Cardíacas", 
+    "Diabetes Tipo 1", "Diabetes Tipo 2", "Hipertensão", "Obesidade",
+    "Insuficiência Renal", "Colesterol Alto", "Doenças Cardíacas",
     "Osteoporose", "Doença Celíaca"
 ]
 
 # Função para sugerir refeições sem ultrapassar a TMB e respeitando restrições
+
+
 def sugerir_refeicoes_ajustado(tmb, previsoes_doencas):
-    doencas_preditas = [disease for disease, risk in previsoes_doencas.items() if risk == 1]
-    df_permitidos = df_alimentos[~df_alimentos["Doencas_Restritivas"].isin(doencas_preditas)]
+    doencas_preditas = [
+        disease for disease, risk in previsoes_doencas.items() if risk == 1
+    ]
+    df_permitidos = df_alimentos[
+        ~df_alimentos["Doencas_Restritivas"].isin(doencas_preditas)
+    ]
     refeicoes = {}
     calorias_refeicao = tmb / 4 if tmb > 0 else 0
-    
+    proporcoes = {"Proteína": 0.4, "Carboidrato": 0.3, "Lipídeos": 0.3}
+
     for tipo_refeicao in ["Café da Manhã", "Almoço", "Lanche da Tarde", "Jantar"]:
-        alimentos_disponiveis = df_permitidos[(df_permitidos["Refeicao_Indicada"] == tipo_refeicao) & (df_permitidos["Calorias"] <= calorias_refeicao)]
-        refeicoes[tipo_refeicao] = alimentos_disponiveis.sample(min(3, len(alimentos_disponiveis)))[["Alimento", "Calorias"]]
-    
+        alimentos_disponiveis = df_permitidos[
+            df_permitidos["Refeicao_Indicada"] == tipo_refeicao
+        ]
+
+        refeicao = []
+
+        for nutriente, proporcao in proporcoes.items():
+            calorias_nutriente = calorias_refeicao * proporcao
+            alimentos_nutriente = alimentos_disponiveis[
+                alimentos_disponiveis[nutriente] > 0
+            ].sort_values(
+                by=nutriente, ascending=False
+            ).reset_index(drop=True)
+            total_calorias_nutriente = 0
+            idx = 0
+
+            while total_calorias_nutriente < calorias_nutriente and idx < len(alimentos_nutriente):
+                alimento = alimentos_nutriente.loc[idx]
+                calorias_por_100g = alimento["Calorias"]
+                nutriente_por_100g = alimento[nutriente]
+
+                if calorias_por_100g <= 0 or nutriente_por_100g <= 0:
+                    idx += 1
+                    continue  # Evita alimentos com calorias ou nutrientes não positivos
+
+                # Calcula as calorias do nutriente por 100g
+                calorias_nutriente_por_100g = nutriente_por_100g * \
+                    (9 if nutriente == "Lipídeos" else 4)
+
+                # Calcula a quantidade necessária do alimento
+                quantidade = (
+                    (calorias_nutriente - total_calorias_nutriente)
+                    / calorias_nutriente_por_100g
+                ) * 100
+
+                # Garante que não seja negativa
+                quantidade = max(quantidade, 0)
+
+                calorias_adicionadas = (calorias_por_100g * quantidade) / 100
+                nutriente_g = (nutriente_por_100g * quantidade) / 100
+
+                # Verifica se os valores são maiores que zero
+                if quantidade > 0 and calorias_adicionadas > 0 and nutriente_g > 0:
+                    alimento_ajustado = {
+                        "Alimento": alimento["Alimento"],
+                        "Quantidade (g)": quantidade,
+                        "Calorias": calorias_adicionadas,
+                        "Proteína": 0,
+                        "Carboidrato": 0,
+                        "Lipídeos": 0,
+                    }
+                    alimento_ajustado[nutriente] = nutriente_g
+
+                    refeicao.append(alimento_ajustado)
+                    total_calorias_nutriente += calorias_nutriente_por_100g * \
+                        (quantidade / 100)
+
+                idx += 1
+
+        # Cria DataFrame da refeição
+        df_refeicao = pd.DataFrame(refeicao)
+
+        # Remove alimentos com quantidade zero
+        df_refeicao = df_refeicao[df_refeicao["Quantidade (g)"] > 0]
+
+        # Agrupa por alimento para somar quantidades e nutrientes
+        df_refeicao = df_refeicao.groupby("Alimento", as_index=False).agg({
+            "Quantidade (g)": "sum",
+            "Calorias": "sum",
+            "Proteína": "sum",
+            "Carboidrato": "sum",
+            "Lipídeos": "sum",
+        })
+
+        # Remove alimentos com quantidade zero após a agregação
+        df_refeicao = df_refeicao[df_refeicao["Quantidade (g)"] > 0]
+
+        # Ajusta a quantidade total para atingir as calorias da refeição
+        total_calorias_refeicao = df_refeicao["Calorias"].sum()
+        fator_ajuste = calorias_refeicao / \
+            total_calorias_refeicao if total_calorias_refeicao > 0 else 0
+
+        if fator_ajuste > 0:
+            df_refeicao["Quantidade (g)"] *= fator_ajuste
+            df_refeicao["Calorias"] *= fator_ajuste
+            df_refeicao["Proteína"] *= fator_ajuste
+            df_refeicao["Carboidrato"] *= fator_ajuste
+            df_refeicao["Lipídeos"] *= fator_ajuste
+
+        # Remove alimentos com quantidade zero após a agregação
+        df_refeicao = df_refeicao[round(df_refeicao["Quantidade (g)"]) > 0]
+
+        refeicoes[tipo_refeicao] = df_refeicao
+
     return refeicoes
 
 # Função para treinar o modelo de risco de doença com base nos dados do paciente
+
+
 def treinar_modelo_risco(df_pacientes):
     y_columns = [col for col in df_pacientes.columns if "Doença" in col]
     X = df_pacientes.drop(columns=y_columns)
     y = df_pacientes[y_columns]
-    
+
     modelos = {}
     metricas = {}
     previsoes = {}
-    
+
     for disease in y.columns:
-        X_train, X_test, y_train, y_test = train_test_split(X, y[disease], test_size=0.3, random_state=42)
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y[disease], test_size=0.3, random_state=42)
         model = RandomForestClassifier(random_state=42)
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
-        
+
         modelos[disease] = model
         metricas[disease] = {
             "Acurácia": accuracy_score(y_test, y_pred),
@@ -75,14 +199,19 @@ def treinar_modelo_risco(df_pacientes):
             "Precisão": precision_score(y_test, y_pred),
             "Recall": recall_score(y_test, y_pred)
         }
-        previsoes[disease] = model.predict(X_test[:1])  # Exemplo com um paciente de teste
-    
+        # Exemplo com um paciente de teste
+        previsoes[disease] = model.predict(X_test[:1])
+
     return modelos, metricas, previsoes
+
 
 # Configuração de navegação no Streamlit
 st.title("Sistema de Recomendação Alimentar para Idosos")
 st.sidebar.title("Navegação")
-menu = st.sidebar.radio("Menu", ["Coleta de Dados","Resumo de Pacientes", "Resumo de Alimentos", "Anamnese", "Recomendações","Modelo de Machine Learning", "Resumo de Dados"])
+menu = st.sidebar.radio("Menu", ["Coleta de Dados", "Anamnese", "Recomendações",
+                        "Modelo de Machine Learning", "Resumo de Pacientes", "Resumo de Alimentos", "Resumo de Dados", "Análise de Dados de Alimentos"])
+st.sidebar.image('Logo.png', use_column_width=True)
+
 
 # Inicializando variáveis no session_state para garantir que os dados persistam
 if 'dados_paciente' not in st.session_state:
@@ -95,40 +224,49 @@ if 'dados_paciente' not in st.session_state:
 # Página de Coleta de Dados
 if menu == "Coleta de Dados":
     st.header("Informações do Paciente")
-    
+
     # Coleta e atualização de cada campo no session_state
-    nome = st.text_input("Nome", value=st.session_state['dados_paciente'].get('nome', ''))
+    nome = st.text_input(
+        "Nome", value=st.session_state['dados_paciente'].get('nome', ''))
     st.session_state['dados_paciente']['nome'] = nome
-    
-    idade = st.number_input("Idade", min_value=0, value=st.session_state['dados_paciente'].get('idade', 0))
+
+    idade = st.number_input(
+        "Idade", min_value=0, value=st.session_state['dados_paciente'].get('idade', 0))
     st.session_state['dados_paciente']['idade'] = idade
-    
-    genero = st.selectbox("Gênero", ["", "Masculino", "Feminino"], index=["", "Masculino", "Feminino"].index(st.session_state['dados_paciente'].get('genero', '')))
+
+    genero = st.selectbox("Gênero", ["", "Masculino", "Feminino"], index=[
+        "", "Masculino", "Feminino"].index(st.session_state['dados_paciente'].get('genero', '')))
     st.session_state['dados_paciente']['genero'] = genero
-    
-    peso = st.number_input("Peso (kg)", min_value=0.0, max_value=200.0, value=st.session_state['dados_paciente'].get('peso', 0.0))
+
+    peso = st.number_input("Peso (kg)", min_value=0.0, max_value=200.0,
+                           value=st.session_state['dados_paciente'].get('peso', 0.0))
     st.session_state['dados_paciente']['peso'] = peso
-    
-    altura = st.number_input("Altura (cm)", min_value=0.0, max_value=250.0, value=st.session_state['dados_paciente'].get('altura', 0.0))
+
+    altura = st.number_input("Altura (cm)", min_value=0.0, max_value=250.0,
+                             value=st.session_state['dados_paciente'].get('altura', 0.0))
     st.session_state['dados_paciente']['altura'] = altura
-    
-    atividade_fisica = st.selectbox("Nível de Atividade Física", ["", "Sedentário", "Leve", "Moderado", "Intenso"], index=["", "Sedentário", "Leve", "Moderado", "Intenso"].index(st.session_state['dados_paciente'].get('atividade_fisica', '')))
+
+    atividade_fisica = st.selectbox("Nível de Atividade Física", ["", "Sedentário", "Leve", "Moderado", "Intenso"], index=[
+        "", "Sedentário", "Leve", "Moderado", "Intenso"].index(st.session_state['dados_paciente'].get('atividade_fisica', '')))
     st.session_state['dados_paciente']['atividade_fisica'] = atividade_fisica
-    
+
     # Cálculo de IMC e TMB, atualizando o session_state com os valores calculados
     if st.session_state['dados_paciente']['peso'] > 0 and st.session_state['dados_paciente']['altura'] > 0 and st.session_state['dados_paciente']['idade'] > 0:
-        st.session_state['dados_paciente']['imc'] = calcular_imc(st.session_state['dados_paciente']['peso'], st.session_state['dados_paciente']['altura'])
-        st.write(f"IMC Calculado: {st.session_state['dados_paciente']['imc']:.2f}")
-        
+        st.session_state['dados_paciente']['imc'] = calcular_imc(
+            st.session_state['dados_paciente']['peso'], st.session_state['dados_paciente']['altura'])
+        st.write(
+            f"IMC Calculado: {st.session_state['dados_paciente']['imc']:.2f}")
+
         if st.session_state['dados_paciente']['genero'] and st.session_state['dados_paciente']['atividade_fisica']:
             st.session_state['dados_paciente']['tmb'] = calcular_tmb(
-                st.session_state['dados_paciente']['peso'], 
-                st.session_state['dados_paciente']['altura'], 
-                st.session_state['dados_paciente']['idade'], 
-                st.session_state['dados_paciente']['genero'], 
+                st.session_state['dados_paciente']['peso'],
+                st.session_state['dados_paciente']['altura'],
+                st.session_state['dados_paciente']['idade'],
+                st.session_state['dados_paciente']['genero'],
                 st.session_state['dados_paciente']['atividade_fisica']
             )
-            st.write(f"Taxa Metabólica Basal (TMB): {st.session_state['dados_paciente']['tmb']:.2f} kcal")
+            st.write(
+                f"Taxa Metabólica Basal (TMB): {st.session_state['dados_paciente']['tmb']:.2f} kcal")
 
 
 # Página de Anamnese
@@ -151,9 +289,10 @@ elif menu == "Anamnese":
 
     # Salva a lista atualizada no session_state
     st.session_state['dados_paciente']['doencas'] = doencas_selecionadas
-    
+
     # Exibir as doenças selecionadas
-    st.write("Doenças selecionadas:", st.session_state['dados_paciente']['doencas'])
+    st.write("Doenças selecionadas:",
+             st.session_state['dados_paciente']['doencas'])
 
 
 # Página de Recomendação de Refeições
@@ -166,17 +305,18 @@ elif menu == "Recomendações":
     # Verifica se a TMB foi calculada
     tmb = st.session_state['dados_paciente'].get('tmb', 0)
     if tmb <= 0:
-        st.write("Por favor, insira os dados do paciente na página 'Coleta de Dados' para calcular a TMB.")
+        st.write(
+            "Por favor, insira os dados do paciente na página 'Coleta de Dados' para calcular a TMB.")
     else:
         modelos, metricas, previsoes = treinar_modelo_risco(df_pacientes)
-        
+
         # Sugerir refeições com base na TMB e nas restrições
         recomendacoes = sugerir_refeicoes_ajustado(tmb, previsoes)
-        
+
         # Calorias distribuídas igualmente para cada refeição inicial
         calorias_por_refeicao = tmb / 4
         st.write(f"TMB calculada para o dia: {tmb:.2f} kcal")
-        
+
         total_calorias_dia = 0  # Variável para armazenar o total de calorias para o dia
         refeicoes_ajustadas = {}
 
@@ -186,17 +326,23 @@ elif menu == "Recomendações":
             # Ajuste de calorias para não ultrapassar a TMB por refeição
             if total_calorias_refeicao > calorias_por_refeicao:
                 # Selecionar alimentos de menor caloria até atingir o limite da refeição
-                alimentos = alimentos.sort_values(by='Calorias', ascending=True)
+                alimentos = alimentos.sort_values(
+                    by='Calorias', ascending=True)
                 calorias_cumulativas = alimentos['Calorias'].cumsum()
-                alimentos = alimentos[calorias_cumulativas <= calorias_por_refeicao * 1.05]  # Ligeiramente maior para ajustar
-            
+                # Ligeiramente maior para ajustar
+                alimentos = alimentos[calorias_cumulativas <=
+                                      calorias_por_refeicao * 1.05]
+
             total_calorias_refeicao = alimentos['Calorias'].sum()
             total_calorias_dia += total_calorias_refeicao  # Adiciona ao total diário
-            refeicoes_ajustadas[refeicao] = alimentos  # Salva a refeição ajustada
+            # Salva a refeição ajustada
+            refeicoes_ajustadas[refeicao] = alimentos
 
         # Ajuste final se total_calorias_dia for ligeiramente menor que TMB
         if total_calorias_dia < tmb:
+            # Todo: Perguntar para o Pedro o que isso significa
             ajuste_fator = tmb / total_calorias_dia
+            # ajuste_fator = 1  # Adicionado esse valor para não alterar as calorias por enquanto
             total_calorias_dia = 0  # Redefine o total para recalcular
 
             # Aplicar o fator de ajuste em cada refeição para que o total corresponda ou seja ligeiramente superior à TMB
@@ -213,36 +359,72 @@ elif menu == "Recomendações":
 
             # Exibe os alimentos da refeição e suas calorias ajustadas
             for _, row in alimentos.iterrows():
-                st.write(f"- {row['Alimento']}: {row['Calorias']:.2f} kcal")
-            
+                row = row.fillna(0)
+
+                print(row['Quantidade (g)'], 2)
+                print(round(row['Quantidade (g)'], 2))
+
+                st.write(
+                    f"- {row['Alimento']} ({row['Quantidade (g)']:.2f}g): {row['Calorias']:.2f} kcal - Proteína: {row['Proteína']:.2f}g - Carboidrato: {row['Carboidrato']:.2f}g - Lipídeos: {row['Lipídeos']:.2f}g")
             # Exibe o total de calorias para a refeição atual
-            st.write(f"**Total de calorias para {refeicao}: {total_calorias_refeicao:.2f} kcal**")
-        
+            st.write(
+                f"**Total de calorias para {refeicao}: {total_calorias_refeicao:.2f} kcal**")
+
         # Exibe o total de calorias sugerido para o dia
-        st.write(f"### Total de calorias sugerido para o dia: {total_calorias_dia:.2f} kcal")
-        
+        st.write(
+            f"### Total de calorias sugerido para o dia: {total_calorias_dia:.2f} kcal")
+
         if total_calorias_dia > tmb:
-            st.info(f"O total de calorias ({total_calorias_dia:.2f} kcal) está ligeiramente acima da TMB ({tmb:.2f} kcal) para atender aos requisitos nutricionais.")
+            st.info(
+                f"O total de calorias ({total_calorias_dia:.2f} kcal) está ligeiramente acima da TMB ({tmb:.2f} kcal) para atender aos requisitos nutricionais.")
 
+        # Calcula o total de cada nutriente para o dia
+        total_proteina = sum(alimentos['Proteína'].sum()
+                             for refeicao, alimentos in recomendacoes.items())
+        total_carboidrato = sum(alimentos['Carboidrato'].sum()
+                                for refeicao, alimentos in recomendacoes.items())
+        total_lipideos = sum(alimentos['Lipídeos'].sum()
+                             for refeicao, alimentos in recomendacoes.items())
 
+        # Cria um DataFrame com os nutrientes totais
+        nutrientes_totais = pd.DataFrame({
+            'Nutriente': ['Proteína', 'Carboidrato', 'Lipídeos'],
+            'Quantidade (g)': [total_proteina.round(2), total_carboidrato.round(2), total_lipideos.round(2)]
+        })
 
-
-
-
-
+        # Exibe o gráfico de barras
+        fig_nutrientes = go.Figure(data=[
+            go.Bar(
+                x=nutrientes_totais['Nutriente'],
+                y=nutrientes_totais['Quantidade (g)'],
+                text=nutrientes_totais['Quantidade (g)'],
+                textposition='auto',
+                marker=dict(
+                    color='rgba(0, 128, 255, 0.7)',
+                    line=dict(width=1.5, color='rgba(0, 128, 255, 1)')
+                )
+            )
+        ])
+        fig_nutrientes.update_layout(
+            title="Total de Nutrientes para o Dia",
+            xaxis_title="Nutrientes",
+            yaxis_title="Quantidade (g)",
+            template="plotly_white"
+        )
+        st.plotly_chart(fig_nutrientes)
 
 
 # Página de Resumo de Dados
 elif menu == "Resumo de Dados":
     st.header("Resumo de Dados")
-    
+
     # Resumo de df_pacientes
     st.subheader("Resumo do DataFrame de Pacientes")
     st.write("Número de pacientes:", df_pacientes.shape[0])
     st.write(df_pacientes.describe())
     st.write("Amostra de dados de pacientes:")
     st.write(df_pacientes.head())
-    
+
     # Resumo de df_alimentos
     st.subheader("Resumo do DataFrame de Alimentos")
     st.write("Número de alimentos:", df_alimentos.shape[0])
@@ -250,10 +432,19 @@ elif menu == "Resumo de Dados":
     st.write("Amostra de dados de alimentos:")
     st.write(df_alimentos)
 
+# Página de Resumo de Dados
+elif menu == "Análise de Dados de Alimentos":
+    # st.header("Análise de Dados de Alimentos")
+    import profile_report
+    from streamlit_ydata_profiling import st_profile_report
+
+    st_profile_report(profile_report.profile)
+
+
 # Página de Resumo de Pacientes com Gráficos
 elif menu == "Resumo de Pacientes":
     st.header("Resumo dos Pacientes")
-    
+
     # Gráfico de distribuição de idade
     fig_idade = go.Figure(data=[
         go.Histogram(
@@ -429,24 +620,27 @@ elif menu == "Modelo de Machine Learning":
     st.header("Modelo de Machine Learning Usado e Resultados")
 
     # Verificar se todas as informações necessárias estão preenchidas
-    if (st.session_state['dados_paciente']['peso'] > 0 and 
-        st.session_state['dados_paciente']['altura'] > 0 and 
-        st.session_state['dados_paciente']['idade'] > 0 and 
-        st.session_state['dados_paciente']['genero'] and 
-        st.session_state['dados_paciente']['atividade_fisica'] and 
-        st.session_state['dados_paciente']['doencas']):
+    if (st.session_state['dados_paciente']['peso'] > 0 and
+        st.session_state['dados_paciente']['altura'] > 0 and
+        st.session_state['dados_paciente']['idade'] > 0 and
+        st.session_state['dados_paciente']['genero'] and
+        st.session_state['dados_paciente']['atividade_fisica'] and
+            st.session_state['dados_paciente']['doencas']):
 
         # Verificar se a coluna Target existe, caso contrário, criá-la com valores simulados
         if 'Target' not in df_alimentos.columns:
-            df_alimentos['Target'] = np.random.choice([0, 1], size=len(df_alimentos))
+            df_alimentos['Target'] = np.random.choice(
+                [0, 1], size=len(df_alimentos))
 
         # Preparação dos dados para treinamento, convertendo variáveis categóricas para numéricas
         # Verificar se a coluna 'Target' existe antes de removê-la
-        df_alimentos_encoded = pd.get_dummies(df_alimentos.drop(columns=["Target"], errors="ignore"))
+        df_alimentos_encoded = pd.get_dummies(
+            df_alimentos.drop(columns=["Target"], errors="ignore"))
         X = df_alimentos_encoded
         y = df_alimentos["Target"]
 
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.3, random_state=42)
 
         modelo = RandomForestClassifier(random_state=42)
         modelo.fit(X_train, y_train)
@@ -461,7 +655,7 @@ elif menu == "Modelo de Machine Learning":
         # Exibindo informações do modelo e métricas
         st.write(f"**Modelo Utilizado:** Random Forest Classifier")
         st.write("Este modelo foi treinado para recomendar alimentos específicos com base nas características e restrições de saúde dos idosos.")
-        
+
         st.subheader("Métricas de Desempenho")
         st.write(f"**Acurácia:** {acuracia:.2f}")
         st.write(f"**F1 Score:** {f1:.2f}")
@@ -474,7 +668,7 @@ elif menu == "Modelo de Machine Learning":
             - **Precisão** é a proporção de predições corretas entre todas as que foram preditas como positivas.
             - **F1 Score** é a média harmônica entre precisão e recall, proporcionando uma medida balanceada entre ambos.
             - **Recall** mostra a capacidade do modelo em encontrar todas as amostras positivas.
-            
+
             Estas métricas sugerem que o modelo tem um bom desempenho para as recomendações alimentares, atendendo às restrições de saúde e necessidades energéticas do paciente.
         """)
 
