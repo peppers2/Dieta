@@ -210,7 +210,7 @@ st.title("Sistema de Recomendação Alimentar para Idosos")
 st.sidebar.title("Navegação")
 menu = st.sidebar.radio("Menu", ["Coleta de Dados", "Anamnese", "Recomendações",
                         "Modelo de Machine Learning", "Resumo de Pacientes", "Resumo de Alimentos", "Resumo de Dados", "Análise de Dados de Alimentos"])
-st.sidebar.image('Logo.png', use_column_width=True)
+st.sidebar.image('Logo.png', use_container_width=True)
 
 
 # Inicializando variáveis no session_state para garantir que os dados persistam
@@ -423,6 +423,7 @@ elif menu == "Resumo de Dados":
     st.write("Número de pacientes:", df_pacientes.shape[0])
     st.write(df_pacientes.describe())
     st.write("Amostra de dados de pacientes:")
+    df_pacientes.set_index('Idade')
     st.write(df_pacientes.head())
 
     # Resumo de df_alimentos
@@ -430,6 +431,17 @@ elif menu == "Resumo de Dados":
     st.write("Número de alimentos:", df_alimentos.shape[0])
     st.write(df_alimentos.describe())
     st.write("Amostra de dados de alimentos:")
+
+    df_alimentos["Umidade"] = pd.to_numeric(df_alimentos["Umidade"], errors='coerce')
+    df_alimentos["Proteína"] = pd.to_numeric(df_alimentos["Proteína"], errors='coerce')
+    df_alimentos["Colesterol"] = pd.to_numeric(df_alimentos["Colesterol"], errors='coerce')
+    df_alimentos["Lipídeos"] = pd.to_numeric(df_alimentos["Lipídeos"], errors='coerce')
+    df_alimentos["Carboidrato"] = pd.to_numeric(df_alimentos["Carboidrato"], errors='coerce')
+    df_alimentos["Cálcio"] = pd.to_numeric(df_alimentos["Cálcio"], errors='coerce')
+    df_alimentos["Sódio"] = pd.to_numeric(df_alimentos["Sódio"], errors='coerce')
+
+    df_alimentos = df_alimentos.style.format({"Umidade": "{:.2f}", "Proteína": "{:.2f}", "Lipídeos": "{:.2f}" , "Carboidrato": "{:.2f}", "Cálcio": "{:.2f}", "Sódio": "{:.2f}" , "Colesterol": "{:.2f}"   })
+
     st.write(df_alimentos)
 
 # Página de Resumo de Dados
