@@ -453,6 +453,9 @@ elif menu == "Análise de Dados de Alimentos":
     st_profile_report(profile_report.profile)
 
 
+    
+
+
 # Página de Resumo de Pacientes com Gráficos
 elif menu == "Resumo de Pacientes":
     st.header("Resumo dos Pacientes")
