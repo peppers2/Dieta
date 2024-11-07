@@ -210,7 +210,7 @@ st.title("Sistema de Recomendação Alimentar para Idosos")
 st.sidebar.title("Navegação")
 menu = st.sidebar.radio("Menu", ["Coleta de Dados", "Anamnese", "Recomendações",
                         "Modelo de Machine Learning", "Resumo de Pacientes", "Resumo de Alimentos", "Resumo de Dados", "Análise de Dados de Alimentos"])
-st.sidebar.image('Logo.png', use_container_width=True)
+st.sidebar.image('logo.png', use_container_width=True)
 
 
 # Inicializando variáveis no session_state para garantir que os dados persistam
