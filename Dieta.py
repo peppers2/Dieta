@@ -391,6 +391,7 @@ elif menu == "Recomendações":
             'Nutriente': ['Proteína', 'Carboidrato', 'Lipídeos'],
             'Quantidade (g)': [total_proteina.round(2), total_carboidrato.round(2), total_lipideos.round(2)]
         })
+        
 
         # Exibe o gráfico de barras
         fig_nutrientes = go.Figure(data=[
