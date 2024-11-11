@@ -391,7 +391,7 @@ elif menu == "Recomendações":
             'Nutriente': ['Proteína', 'Carboidrato', 'Lipídeos'],
             'Quantidade (g)': [total_proteina.round(2), total_carboidrato.round(2), total_lipideos.round(2)]
         })
-        
+
 
         # Exibe o gráfico de barras
         fig_nutrientes = go.Figure(data=[
@@ -449,11 +449,30 @@ elif menu == "Resumo de Dados":
 # Página de Resumo de Dados
 elif menu == "Análise de Dados de Alimentos":
     # st.header("Análise de Dados de Alimentos")
-    import profile_report
-    from streamlit_ydata_profiling import st_profile_report
 
-    st_profile_report(profile_report.profile)
+    import sweetviz as sv
+   
+    import streamlit.components.v1 as components
+    
 
+    
+    
+
+    report = sv.analyze(df_alimentos)
+
+    # Salve o relatório como um arquivo HTML temporário
+    report_file = "sweetviz_report.html"
+    report.show_html(report_file)
+
+    # Exiba o relatório no Streamlit
+    with open(report_file, "r", encoding="utf-8") as f:
+        html_content = f.read()
+
+    components.html(html_content, height=800, scrolling=True)
+
+
+
+    
 
     
 
