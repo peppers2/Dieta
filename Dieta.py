@@ -414,6 +414,7 @@ elif menu == "Recomendações":
         st.plotly_chart(fig_nutrientes)
 
 
+
 # Página de Resumo de Dados
 elif menu == "Resumo de Dados":
     st.header("Resumo de Dados")
