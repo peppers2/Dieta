@@ -6,6 +6,8 @@ import plotly.graph_objects as go
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
+import plotly.figure_factory as ff
+
 
 import alimentos
 
@@ -19,6 +21,7 @@ st.set_page_config(page_title="TCC Univesp - Sistema de Recomendação",
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
 
 
 # Chama a função para injetar CSS
@@ -450,25 +453,176 @@ elif menu == "Resumo de Dados":
 elif menu == "Análise de Dados de Alimentos":
     # st.header("Análise de Dados de Alimentos")
 
-    import sweetviz as sv
+    
+
+    
+    
+    
+    
+    
+
    
-    import streamlit.components.v1 as components
-    
 
-    
-    
+    # Resumo Descritivo
+    st.subheader("Resumo Descritivo dos Dados")
+    st.write(df_alimentos.describe().style.format(precision=2))  # Removemos o set_table_styles para evitar o erro
 
-    report = sv.analyze(df_alimentos)
+    # Seleção de colunas para análise
+    st.header("Visualização Interativa")
+    colunas = df_alimentos.columns.tolist()
 
-    # Salve o relatório como um arquivo HTML temporário
-    report_file = "sweetviz_report.html"
-    report.show_html(report_file)
+    # Gráfico de Dispersão
+    st.subheader("Gráfico de Dispersão")
+    coluna_x = st.selectbox("Escolha a coluna para o eixo X (Dispersão)", colunas, index=0)
+    coluna_y = st.selectbox("Escolha a coluna para o eixo Y (Dispersão)", colunas, index=1)
+    fig_scatter = go.Figure(data=go.Scatter(x=df_alimentos[coluna_x], y=df_alimentos[coluna_y], mode='markers'))
+    fig_scatter.update_layout(title=f'Dispersão de {coluna_x} vs {coluna_y}', xaxis_title=coluna_x, yaxis_title=coluna_y)
+    st.plotly_chart(fig_scatter)
+    st.write("**Uso**: O gráfico de dispersão é utilizado para visualizar a relação entre duas variáveis, indicando se existe uma correlação entre elas.")
 
-    # Exiba o relatório no Streamlit
-    with open(report_file, "r", encoding="utf-8") as f:
-        html_content = f.read()
+    # Resumo Descritivo do Gráfico de Dispersão
+    st.write("Resumo Descritivo do Eixo X")
+    st.write(df_alimentos[coluna_x].describe())
+    st.write("Resumo Descritivo do Eixo Y")
+    st.write(df_alimentos[coluna_y].describe())
 
-    components.html(html_content, height=800, scrolling=True)
+    # Histograma
+    st.subheader("Histograma")
+    coluna_hist = st.selectbox("Escolha a coluna para o histograma", colunas)
+    fig_hist = go.Figure(data=go.Histogram(x=df_alimentos[coluna_hist], nbinsx=30))
+    fig_hist.update_layout(title=f'Histograma de {coluna_hist}', xaxis_title=coluna_hist, yaxis_title='Frequência')
+    st.plotly_chart(fig_hist)
+    st.write("**Uso**: O histograma é usado para visualizar a distribuição de uma variável, mostrando como os valores são distribuídos ao longo dos intervalos.")
+
+    st.write(f"Resumo Descritivo de {coluna_hist}")
+    st.write(df_alimentos[coluna_hist].describe())
+
+    # Box Plot
+    st.subheader("Box Plot")
+    coluna_box = st.selectbox("Escolha a coluna para o Box Plot", colunas)
+    fig_box = go.Figure(data=go.Box(y=df_alimentos[coluna_box], boxpoints='all', jitter=0.3))
+    fig_box.update_layout(title=f'Box Plot de {coluna_box}', yaxis_title=coluna_box)
+    st.plotly_chart(fig_box)
+    st.write("**Uso**: O box plot é utilizado para visualizar a dispersão dos dados e identificar valores atípicos (outliers). Ele mostra a mediana e os quartis.")
+
+    st.write(f"Resumo Descritivo de {coluna_box}")
+    st.write(df_alimentos[coluna_box].describe())
+
+    # Gráfico de Barras
+    st.subheader("Gráfico de Barras")
+    coluna_bar = st.selectbox("Escolha a coluna para o Gráfico de Barras", colunas)
+    fig_bar = go.Figure(data=go.Bar(x=df_alimentos.index, y=df_alimentos[coluna_bar]))
+    fig_bar.update_layout(title=f'Gráfico de Barras de {coluna_bar}', xaxis_title="Índice", yaxis_title=coluna_bar)
+    st.plotly_chart(fig_bar)
+    st.write("**Uso**: O gráfico de barras é usado para comparar valores individuais entre diferentes categorias ou índices.")
+
+    st.write(f"Resumo Descritivo de {coluna_bar}")
+    st.write(df_alimentos[coluna_bar].describe())
+
+    # Gráfico de Linhas
+    st.subheader("Gráfico de Linhas")
+    coluna_line = st.selectbox("Escolha a coluna para o Gráfico de Linhas", colunas)
+    fig_line = go.Figure(data=go.Scatter(x=df_alimentos.index, y=df_alimentos[coluna_line], mode='lines'))
+    fig_line.update_layout(title=f'Gráfico de Linhas de {coluna_line}', xaxis_title="Índice", yaxis_title=coluna_line)
+    st.plotly_chart(fig_line)
+    st.write("**Uso**: O gráfico de linhas é ideal para visualizar tendências ao longo do tempo ou através de um índice.")
+
+    st.write(f"Resumo Descritivo de {coluna_line}")
+    st.write(df_alimentos[coluna_line].describe())
+
+    # Gráfico de Área
+    st.subheader("Gráfico de Área")
+    coluna_area = st.selectbox("Escolha a coluna para o Gráfico de Área", colunas)
+    fig_area = go.Figure(data=go.Scatter(x=df_alimentos.index, y=df_alimentos[coluna_area], fill='tozeroy'))
+    fig_area.update_layout(title=f'Gráfico de Área de {coluna_area}', xaxis_title="Índice", yaxis_title=coluna_area)
+    st.plotly_chart(fig_area)
+    st.write("**Uso**: O gráfico de área é usado para representar mudanças cumulativas ao longo de um índice ou tempo.")
+
+    st.write(f"Resumo Descritivo de {coluna_area}")
+    st.write(df_alimentos[coluna_area].describe())
+
+    # Gráfico de Pizza
+    st.subheader("Gráfico de Pizza")
+    coluna_pizza = st.selectbox("Escolha a coluna para o Gráfico de Pizza (categórica)", colunas)
+    df_pizza = df_alimentos[coluna_pizza].value_counts()
+    fig_pizza = go.Figure(data=go.Pie(labels=df_pizza.index, values=df_pizza.values))
+    fig_pizza.update_layout(title=f'Distribuição de {coluna_pizza}')
+    st.plotly_chart(fig_pizza)
+    st.write("**Uso**: O gráfico de pizza mostra a proporção de cada categoria em relação ao total.")
+
+    st.write(f"Contagem de {coluna_pizza}")
+    st.write(df_pizza)
+
+    # Heatmap de Correlação
+    st.subheader("Heatmap de Correlação")
+
+    # Seleciona apenas as colunas numéricas para calcular a correlação
+    df_numerico = df_alimentos.select_dtypes(include=['float64', 'int64'])
+    correlacao = df_numerico.corr()
+
+    # Formata os valores de correlação com duas casas decimais para exibir como rótulos
+    correlacao_text = correlacao.round(2).astype(str)
+
+    # Cria o heatmap de correlação com rótulos de duas casas decimais
+    fig_heatmap = go.Figure(data=go.Heatmap(
+        z=correlacao.values,
+        x=correlacao.columns,
+        y=correlacao.index,
+        colorscale='Viridis',
+        text=correlacao_text.values,  # Define os rótulos dos dados
+        hovertemplate='%{text}'  # Exibe os valores de correlação no hover
+    ))
+
+    fig_heatmap.update_layout(
+        title='Mapa de Calor das Correlações',
+        xaxis_title="Variáveis",
+        yaxis_title="Variáveis"
+    )
+
+    # Exibe o gráfico
+    st.plotly_chart(fig_heatmap)
+
+    st.write("**Uso**: O mapa de calor de correlação mostra a força e direção das relações entre variáveis numéricas.")
+
+
+
+    # Gráfico de Densidade
+    st.subheader("Gráfico de Densidade")
+
+    # Filtra as colunas numéricas para exibir apenas essas no selectbox
+    colunas_numericas = df_alimentos.select_dtypes(include=['float64', 'int64']).columns.tolist()
+    coluna_densidade = st.selectbox("Escolha a coluna para o Gráfico de Densidade", colunas_numericas)
+
+    # Cria o gráfico de densidade
+    fig_densidade = ff.create_distplot([df_alimentos[coluna_densidade].dropna()], [coluna_densidade], show_hist=False)
+    fig_densidade.update_layout(title=f'Densidade de {coluna_densidade}')
+    st.plotly_chart(fig_densidade)
+
+    st.write("**Uso**: O gráfico de densidade mostra a distribuição dos dados de forma suavizada, útil para entender a frequência relativa.")
+
+    # Resumo descritivo
+    st.write(f"Resumo Descritivo de {coluna_densidade}")
+    st.write(df_alimentos[coluna_densidade].describe())
+
+
+      # Gráfico de Pareto
+    st.subheader("Gráfico de Pareto")
+    coluna_pareto = st.selectbox("Escolha a coluna para o Gráfico de Pareto", colunas)
+    df_pareto = df_alimentos[coluna_pareto].value_counts().sort_values(ascending=False).reset_index()
+    df_pareto.columns = [coluna_pareto, 'count']
+    df_pareto['cum_percentage'] = df_pareto['count'].cumsum() / df_pareto['count'].sum() * 100
+    fig_pareto = go.Figure()
+    fig_pareto.add_trace(go.Bar(x=df_pareto[coluna_pareto], y=df_pareto['count'], name='Frequência'))
+    fig_pareto.add_trace(go.Scatter(x=df_pareto[coluna_pareto], y=df_pareto['cum_percentage'], name='Porcentagem Acumulada', yaxis='y2'))
+    fig_pareto.update_layout(title=f'Gráfico de Pareto de {coluna_pareto}',
+                            yaxis=dict(title='Frequência'),
+                            yaxis2=dict(title='Porcentagem Acumulada', overlaying='y', side='right'))
+    st.plotly_chart(fig_pareto)
+    st.write("**Uso**: O gráfico de Pareto combina barras e linhas para mostrar a frequência e o impacto cumulativo das categorias, identificando itens mais significativos.")
+
+    st.write(f"Contagem e Porcentagem Acumulada de {coluna_pareto}")
+    st.write(df_pareto)
+
 
 
 
@@ -621,6 +775,7 @@ elif menu == "Resumo de Alimentos":
             opacity=0.75
         )
     ])
+
     fig_gorduras.update_layout(
         title="Distribuição de Calorias",
         xaxis_title="Calorias",
